@@ -36,3 +36,31 @@ y recargar, obtuve 200 OK.
   mantener el proyecto ordenado.
 - Abrí el sitio con Live Server y no con doble clic, porque con doble
   clic la URL es file:/// y no hay servidor, host ni puerto que analizar.
+
+  MINIRETO 2 - La vitrina de Rueda Libre
+
+Esquema de la página:
+h1 Rueda Libre
+  h2 ¿Quiénes somos?  (lista con viñetas de 3 beneficios)
+  h2 Nuestros servicios
+    h3 Alquiler de bicicletas
+    h3 Recorridos guiados
+    h3 Taller básico
+  h2 ¿Cómo alquilar?  (lista numerada de 4 pasos)
+  h2 Encuéntranos  (id="encuentranos")
+
+Pruebas:
+- Network: todas las peticiones con 200, ninguna con 404.
+- Elements: el árbol coincide con el esquema.
+- Enlace del mapa: abre en otra pestaña.
+- Enlace de correo: abre la aplicación de correo.
+- Enlace interno: lleva a la sección Encuéntranos.
+
+Decisiones:
+- Usé <ol> para los pasos porque el orden importa, y <ul> para los
+  beneficios porque el orden no importa.
+- Usé <strong> para información clave (casco y candado) y <em> para
+  matices del texto.
+- Todas las imágenes usan rutas relativas (img/...) para que funcionen
+  en GitHub Pages.
+- Agregué un saludo de bienvenida en el primer párrafo.
