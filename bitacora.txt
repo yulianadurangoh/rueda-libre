@@ -122,3 +122,46 @@ Pruebas:
 - Network: sin errores 404 en ninguna página.
 - El correo de reservas abre la aplicación de correo.
 - Cada página tiene un title distinto: inicio, tarifas y reservas.
+
+MINIRETO 5 - Estructura con significado
+
+Esquema de regiones (antes de tocar el código):
+
+index.html
+header: logo (enlace al inicio) + nav (Inicio, Tarifas y rutas, Reservas)
+main
+  section: h1 Rueda Libre, portada, bienvenida, enlace a tarifas
+  section: h2 ¿Quiénes somos? + lista de beneficios
+  section: h2 Nuestros servicios
+    article: h3 Alquiler de bicicletas
+    article: h3 Recorridos guiados
+    article: h3 Taller básico
+  section: h2 ¿Cómo alquilar? + pasos + Reservar ahora
+  section (id="encuentranos"): h2 Encuéntranos + mapa y correo
+footer: nombre, correo y año
+
+paginas/tarifas.html
+header: logo + nav
+main
+  h1 Tarifas y recorridos
+  section: h2 Alquiler de bicicletas + tabla
+  section (id="recorridos"): h2 Recorridos guiados + tabla + Reservar ahora
+  aside: h2 Información importante (casco, horarios, qué llevar)
+footer
+
+paginas/reservas.html
+header: logo + nav
+main
+  h1 Reserva tu bicicleta + mensaje + correo
+  aside: h2 Horario de atención (lista de definiciones)
+footer
+
+Decisiones:
+- Cada servicio de inicio es un article porque tiene sentido por sí solo.
+- La información de casco, horarios y qué llevar va en un aside porque
+  complementa las tablas, pero no es el contenido principal.
+- El horario de atención en reservas también es un aside.
+- El id="encuentranos" pasó del h2 a la section, y el enlace interno sigue
+  funcionando.
+- No usé div ni span: todas las partes tienen una etiqueta semántica.
+- La jerarquía de encabezados es la misma de la v0.1.
