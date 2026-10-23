@@ -1,0 +1,38 @@
+BITÁCORA - RUEDA LIBRE
+======================
+
+MINIRETO 1 - Análisis de la petición
+
+1. Petición del documento (index.html)
+- URL completa: http://127.0.0.1:5500/index.html
+- Protocolo: http
+- Host: 127.0.0.1 (mi propio computador)
+- Puerto: 5500 (el que usa Live Server)
+- Ruta: /index.html
+- Método: GET (el navegador pide la página al servidor)
+- Código de estado: 200 OK -> el servidor encontró la página y la envió.
+
+Prueba: la primera vez obtuve 304 Not Modified porque el navegador ya
+tenía la página guardada en caché. Al marcar "Disable cache" en DevTools
+y recargar, obtuve 200 OK.
+
+2. Ruta inexistente
+- URL probada: http://127.0.0.1:5500/promociones.html
+- Método: GET
+- Código de estado: 404 Not Found -> el servidor no encontró ese archivo
+  porque no existe en el proyecto.
+
+3. Rol de cada tecnología en Rueda Libre
+- HTML: la estructura y el contenido. Ej: el título "Rueda Libre" y la
+  lista de servicios.
+- CSS: el diseño visual. Ej: los colores de la marca y la organización
+  del menú.
+- JavaScript: la interacción. Ej: un botón que calcule el precio del
+  alquiler según las horas.
+
+4. Decisiones
+- Usé lang="es" porque el sitio está en español.
+- Separé las páginas en la carpeta paginas/ y las imágenes en img/ para
+  mantener el proyecto ordenado.
+- Abrí el sitio con Live Server y no con doble clic, porque con doble
+  clic la URL es file:/// y no hay servidor, host ni puerto que analizar.
