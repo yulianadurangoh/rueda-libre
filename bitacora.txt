@@ -165,3 +165,26 @@ Decisiones:
   funcionando.
 - No usé div ni span: todas las partes tienen una etiqueta semántica.
 - La jerarquía de encabezados es la misma de la v0.1.
+
+MINIRETO 6 - El formulario de reservas
+Estructura:
+- En reservas.html, dentro de main, creé una section "Formulario de reserva"
+  con un form action="#" method="post".
+- Agrupé los campos en tres fieldset con legend: "Tus datos", "Tu alquiler"
+  y "Confirmación".
+- Cada control tiene un label con for igual a su id y un name para el envío.
+Justificación de tres elecciones:
+1. Tipo de bicicleta con radio (mismo name="bicicleta"): el cliente solo
+   puede elegir una, y con 3 opciones es mejor verlas todas a la vista.
+2. Recorrido guiado con select: son 4 opciones (ninguno + 3 rutas) y una
+   lista desplegable ocupa menos espacio.
+3. Número de documento con type="text" y no number: un documento no se usa
+   para hacer cálculos, puede empezar en 0 y type="number" muestra flechas
+   para subir o bajar el valor, que no tienen sentido aquí.
+Otras: celular con type="tel" (teclado numérico en el celular), fecha con
+type="date" (calendario) y comentarios con textarea (texto largo).
+Pruebas:
+- Al hacer clic en cada etiqueta, su campo recibe el foco o se marca.
+- Los radios de bicicleta y de plan solo permiten elegir una opción.
+- En Elements, todos los controles tienen name.
+- El formulario está dentro de main y la estructura del MiniReto 5 se mantiene.
