@@ -188,3 +188,6 @@ Pruebas:
 - Los radios de bicicleta y de plan solo permiten elegir una opción.
 - En Elements, todos los controles tienen name.
 - El formulario está dentro de main y la estructura del MiniReto 5 se mantiene.
+- Al enviar el formulario, Live Server responde 405 Not Allowed porque es
+  un servidor de archivos estáticos y no acepta peticiones POST. Es esperado:
+  todavía no hay un backend que reciba los datos.
