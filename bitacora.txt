@@ -192,8 +192,7 @@ Pruebas:
   un servidor de archivos estáticos y no acepta peticiones POST. Es esperado:
   todavía no hay un backend que reciba los datos.
 
-  MINIRETO 7 - Reservas sin errores: validación y teclado
-
+ MINIRETO 7 - Reservas sin errores: validación y teclado
 Reglas traducidas a validación nativa:
 - Nombre: required, minlength="3"
 - Documento: required, pattern="[0-9]{6,10}" + title
@@ -204,28 +203,46 @@ Reglas traducidas a validación nativa:
 - Cantidad: type="number", required, min="1", max="6"
 - Comentarios: maxlength="300" (opcional, sin required)
 - Políticas: required en la casilla
-
 Tabla de pruebas (campo | dato | esperado | obtenido):
-1. Todo | formulario vacío | no envía | ...
-2. Nombre | "Al" | no envía, mínimo 3 | ...
-3. Documento | "12ab56" | no envía, solo números | ...
-4. Documento | "12345" | no envía, mínimo 6 dígitos | ...
-5. Correo | "hola.com" | no envía, falta @ | ...
-6. Celular | "1234567890" | no envía, no empieza por 3 | ...
-7. Celular | "300123" | no envía, faltan dígitos | ...
-8. Celular | "3001234567" | lo acepta | ...
-9. Fecha | 15/10/2026 | no envía, fuera de rango | ...
-10. Cantidad | 7 | no envía, máximo 6 | ...
-11. Cantidad | 0 | no envía, mínimo 1 | ...
-12. Políticas | sin marcar | no envía | ...
-13. Todo | datos correctos | envía (405 esperado, sin backend) | ...
-
+Para cada prueba llené todo el formulario bien y cambié un solo campo.
+1. Todo | formulario vacío | no envía | No envió. Marcó Nombre:
+   "Completa este campo".
+2. Nombre | "Al" | no envía, mínimo 3 | No envió: "Alarga el texto a 3 o
+   más caracteres (actualmente, usas 2 caracteres)".
+3. Documento | "12ab56" | no envía, solo números | No envió: "Haz coincidir
+   el formato solicitado" + el mensaje del title.
+4. Documento | "12345" | no envía, mínimo 6 dígitos | No envió: "Haz
+   coincidir el formato solicitado" + el mensaje del title.
+5. Correo | "hola.com" | no envía, falta @ | No envió: "Incluye un signo @
+   en la dirección de correo electrónico".
+6. Celular | "1234567890" | no envía, no empieza por 3 | No envió: "Haz
+   coincidir el formato solicitado" + el mensaje del title.
+7. Celular | "324689706" (9 dígitos) | no envía, faltan dígitos | No envió:
+   "Utiliza un formato que coincida con el solicitado. Escribe 10 dígitos
+   que empiecen por 3, sin espacios. Ejemplo: 3001234567".
+8. Celular | "3001234567" | lo acepta | Lo aceptó, sin aviso.
+9. Fecha | 15/10/2026 | no envía, fuera de rango | No envió: "El valor debe
+   ser igual o posterior a 01/11/2026".
+10. Cantidad | 7 | no envía, máximo 6 | No envió: "El valor debe ser menor
+    de o igual a 6".
+11. Cantidad | 0 | no envía, mínimo 1 | No envió: "El valor debe ser mayor
+    de o igual a 1".
+12. Políticas | sin marcar | no envía | No envió: "Controla esta casilla si
+    deseas continuar".
+13. Tipo de bicicleta | ninguna marcada | no envía | No envió: "Selecciona
+    una de estas opciones".
+14. Todo | datos correctos | envía (405 esperado, sin backend) | Envió y
+    apareció "HTTP ERROR 405", porque Live Server no acepta POST.
+Observación: el texto del title aparece debajo del mensaje del navegador
+y explica cómo corregir el dato. El texto exacto de los mensajes puede
+cambiar un poco según el navegador.
 Prueba con teclado:
 - Recorrí el formulario solo con Tab y Shift+Tab, flechas en los radios
   y el select, barra espaciadora en la casilla y Enter para enviar.
 - El orden es lógico: de arriba hacia abajo, igual al orden visual.
-
 Decisiones:
 - Agregué la regla en algunas etiquetas, como "Celular (10 dígitos)" y
   "Cantidad (1 a 6)", para que el usuario la conozca antes de equivocarse.
-- Recorrido guiado no es obligatorio porque "Ninguno" es una opción válida
+- Recorrido guiado no es obligatorio porque "Ninguno" es una opción válida.
+- Documento usa type="text" con pattern en vez de type="number", porque
+  number no permite controlar la cantidad de dígitos con pattern.
