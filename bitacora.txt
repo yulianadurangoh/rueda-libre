@@ -64,3 +64,27 @@ Decisiones:
 - Todas las imágenes usan rutas relativas (img/...) para que funcionen
   en GitHub Pages.
 - Agregué un saludo de bienvenida en el primer párrafo.
+
+MINIRETO 3 - Tarifas claras
+Estructura:
+- Creé paginas/tarifas.html con dos tablas: tarifas de alquiler y
+  recorridos guiados (id="recorridos").
+- Cada tabla tiene caption, thead, tbody, th con scope="col" para las
+  columnas y th con scope="row" para la primera celda de cada fila.
+- La información adicional (casco y candado, horarios y qué llevar) va en
+  párrafos y en una lista, no en tablas.
+Rutas relativas:
+- Desde index.html hacia tarifas: paginas/tarifas.html
+- Desde index.html a la tabla de recorridos: paginas/tarifas.html#recorridos
+- Desde tarifas.html al inicio: ../index.html
+- Desde tarifas.html al logo: ../img/logo.svg
+  (uso ../ porque tarifas.html está dentro de paginas/ y debo subir un nivel)
+Pruebas:
+- Inicio -> tarifas: funciona.
+- Tarifas -> inicio: funciona.
+- Enlace de recorridos: abre tarifas directamente en la tabla de recorridos.
+- El logo se ve en tarifas.html.
+- Network: sin errores 404.
+Decisiones:
+- Cambié la hora de los recorridos en inicio de 8:00 a 7:00 para que
+  coincida con los datos del cliente.
