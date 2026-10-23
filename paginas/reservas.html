@@ -26,6 +26,7 @@
     <section>
       <h2>Formulario de reserva</h2>
        <form action="#" method="post">
+         <p>Todos los campos son obligatorios, excepto Recorrido guiado y Comentarios.</p>
 
         <fieldset>
           <legend>Tus datos</legend>
@@ -34,7 +35,7 @@
             <input type="text" id="nombre" name="nombre" required minlength="3">
           </p>
           <p>
-            <label for="documento">Número de documento</label>
+            <label for="documento">Número de documento (solo números, de 6 a 10 dígitos)</label>
             <input type="text" id="documento" name="documento" required pattern="[0-9]{6,10}" title="Escribe solo números, entre 6 y 10 dígitos, sin puntos ni espacios">
           </p>
           <p>
@@ -50,7 +51,7 @@
         <fieldset>
           <legend>Tu alquiler</legend>
           <p>
-            <label for="fecha">Fecha del alquiler</label>
+            <label for="fecha">Fecha del alquiler (entre el 1 de noviembre y el 31 de diciembre de 2026)</label>
             <input type="date" id="fecha" name="fecha" required min="2026-11-01" max="2026-12-31">
           </p>
 

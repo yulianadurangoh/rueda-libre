@@ -246,3 +246,54 @@ Decisiones:
 - Recorrido guiado no es obligatorio porque "Ninguno" es una opción válida.
 - Documento usa type="text" con pattern en vez de type="number", porque
   number no permite controlar la cantidad de dígitos con pattern.
+
+  MINIRETO 8 - Rueda Libre v0.2 en línea: accesible y publicada
+Sitio publicado: https://yulianadurangoh.github.io/rueda-libre/
+Auditoría de accesibilidad
+Revisé las tres páginas: textos alternativos, jerarquía de encabezados,
+textos de enlace, idioma y recorrido con teclado.
+Verificado sin cambios:
+- Imágenes: las 6 tienen alt descriptivo; el logo dice "Rueda Libre, ir al
+  inicio" porque es un enlace. No hay imágenes decorativas.
+- Encabezados: un h1 por página y niveles sin saltos.
+- Idioma: lang="es" en las tres páginas.
+- Teclado: se recorre todo con Tab en orden lógico y el foco se ve.
+Hallazgos y correcciones:
+1. Hallazgo: "Ver ubicación en el mapa" abre otra pestaña sin avisar.
+   Corrección: agregué "(se abre en otra pestaña)" al texto del enlace.
+2. Hallazgo: el enlace "mira cómo llegar" no se entiende fuera de contexto.
+   Corrección: "Mira cómo llegar a nuestro punto de alquiler".
+3. Hallazgo: "Reservar ahora" en inicio no dice qué se reserva.
+   Corrección: "Reservar ahora tu bicicleta".
+4. Hallazgo: "Reservar ahora" en tarifas tampoco lo dice.
+   Corrección: "Reservar ahora un recorrido guiado".
+5. Hallazgo: el formulario no indicaba qué campos son obligatorios.
+   Corrección: agregué un aviso al inicio del formulario.
+6. Hallazgo: documento y fecha no mostraban su regla antes del error.
+   Corrección: agregué la regla en sus etiquetas, como ya tenía el celular.
+Contraste de la paleta (verificado con WebAIM Contrast Checker)
+Regla WCAG AA: 4.5:1 texto normal, 3:1 texto grande.
+- Blanco sobre Verde Ruta: 5.31:1 -> apta para texto normal
+- Blanco sobre Naranja Pedal: 2.21:1 -> no apta
+- Azul Noche sobre Naranja Pedal: 7.2:1 -> apta para texto normal
+- Azul Noche sobre Crema: 14.82:1 -> apta para texto normal
+- Gris Asfalto sobre Crema: 5.56:1 -> apta para texto normal
+- Verde Ruta sobre Crema: 4.93:1 -> apta para texto normal
+- Naranja Pedal sobre Crema: 2.05:1 -> no apta
+- Blanco sobre Azul Noche: 15.97:1 -> apta para texto normal
+Mapa de uso de color:
+- Fondo general: Crema (#FAF6EF)
+- Texto principal y títulos: Azul Noche (#14213D) sobre Crema
+- Texto secundario: Gris Asfalto (#5B6470) sobre Crema
+- Enlaces: Verde Ruta (#1E7A4F) sobre Crema
+- Botones principales: fondo Verde Ruta con texto blanco
+- Encabezado: fondo Azul Noche con texto blanco
+- Destacados y botones secundarios: fondo Naranja Pedal con texto Azul Noche
+- Prohibido: texto blanco sobre Naranja y texto Naranja sobre Crema
+  (no alcanzan ni 3:1). El naranja solo se usa como fondo con texto azul
+  o como detalle decorativo.
+Publicación:
+- GitHub Pages desde la rama main, carpeta / (root).
+- Recorrí el sitio publicado: las tres páginas, las imágenes y los enlaces
+  funcionan.
+- Agregué el enlace de GitHub Pages en la descripción del repositorio.
