@@ -88,3 +88,37 @@ Pruebas:
 Decisiones:
 - Cambié la hora de los recorridos en inicio de 8:00 a 7:00 para que
   coincida con los datos del cliente.
+
+  MINIRETO 4 - Rueda Libre v0.1: un sitio navegable
+
+Cambios:
+- Creé paginas/reservas.html con el título "Reserva tu bicicleta", el correo
+  como enlace mailto: y el horario en una lista de definiciones (dl, dt, dd).
+- Agregué el mismo menú (ul con enlaces) al inicio de las tres páginas.
+- Agregué el mismo pie de página al final de las tres páginas: nombre,
+  correo y año.
+- Agregué "Reservar ahora" en inicio y debajo de la tabla de recorridos.
+
+Tabla de rutas (origen -> destino -> ruta escrita):
+index.html            -> index.html            -> index.html
+index.html            -> paginas/tarifas.html  -> paginas/tarifas.html
+index.html            -> paginas/reservas.html -> paginas/reservas.html
+index.html            -> tabla de recorridos   -> paginas/tarifas.html#recorridos
+index.html            -> img/portada.jpeg      -> img/portada.jpeg
+paginas/tarifas.html  -> index.html            -> ../index.html
+paginas/tarifas.html  -> paginas/tarifas.html  -> tarifas.html
+paginas/tarifas.html  -> paginas/reservas.html -> reservas.html
+paginas/tarifas.html  -> img/logo.svg          -> ../img/logo.svg
+paginas/reservas.html -> index.html            -> ../index.html
+paginas/reservas.html -> paginas/tarifas.html  -> tarifas.html
+paginas/reservas.html -> paginas/reservas.html -> reservas.html
+
+Regla: desde index.html entro a la carpeta con "paginas/"; desde los
+archivos de paginas/ salgo con "../" para llegar a la carpeta principal;
+entre tarifas.html y reservas.html no necesito carpeta porque están juntas.
+
+Pruebas:
+- Recorrí las 9 combinaciones del menú: todas funcionan.
+- Network: sin errores 404 en ninguna página.
+- El correo de reservas abre la aplicación de correo.
+- Cada página tiene un title distinto: inicio, tarifas y reservas.
