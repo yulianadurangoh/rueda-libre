@@ -297,3 +297,26 @@ Publicación:
 - Recorrí el sitio publicado: las tres páginas, las imágenes y los enlaces
   funcionan.
 - Agregué el enlace de GitHub Pages en la descripción del repositorio.
+
+MINIRETO 9 - La identidad de Rueda Libre
+Cambios:
+- Creé css/styles.css y lo enlacé en las tres páginas: css/styles.css desde
+  index.html y ../css/styles.css desde las páginas de paginas/.
+- Cargué Montserrat (700) y Open Sans (400 y 600) desde Google Fonts, con
+  preconnect, antes de mi hoja de estilos.
+- Declaré en :root variables para los 5 colores de marca, las 2 fuentes
+  (con respaldo Arial, sans-serif) y una escala de espaciado en rem
+  (0.5, 1, 1.5 y 2rem).
+- Apliqué fuente, color de texto y fondo en body para aprovechar la herencia.
+- Apliqué la fuente de títulos a h1, h2 y h3 con un solo selector agrupado.
+- Usé solo la combinación aprobada Azul Noche sobre Crema (14.82:1).
+- Verifiqué que ningún HTML tiene style="" ni etiquetas <style>.
+Comprobación de herencia en DevTools (un párrafo de inicio):
+- SÍ se hereda: color. En Styles aparece en "Inherited from body" y en
+  Computed el párrafo tiene color rgb(20, 33, 61), que es Azul Noche.
+  También heredan font-family (Open Sans) y line-height (1.6).
+- NO se hereda: background-color. En Computed el párrafo tiene
+  rgba(0, 0, 0, 0) (transparente); el crema que se ve es el fondo del body.
+Verificación:
+- Network: styles.css y las fuentes cargan con 200 en las tres páginas.
+- Computed: los títulos muestran Montserrat y los párrafos Open Sans.
