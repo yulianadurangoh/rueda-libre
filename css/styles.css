@@ -1,8 +1,16 @@
 /* =========================================
-   RUEDA LIBRE · Hoja de estilos
+   RUEDA LIBRE · Hoja de estilos (v1.0)
+   Secciones:
+   1. Variables
+   2. Base
+   3. Estructura (contenedor, portada y pie)
+   4. Navegación
+   5. Componentes (botones, tarjetas, etiqueta, tablas, WhatsApp)
+   6. Formulario
    ========================================= */
 
-/* 1. Variables: colores de marca, fuentes y espaciado */
+
+/* ---------- 1. Variables ---------- */
 :root {
   /* Colores de marca (validados en el MiniReto 8) */
   --verde-ruta: #1E7A4F;
@@ -21,9 +29,11 @@
   --espacio-s: 1rem;
   --espacio-m: 1.5rem;
   --espacio-l: 2rem;
+  --espacio-xl: 5rem;
 }
 
-/* 2. Base: lo que todo el sitio hereda del body */
+
+/* ---------- 2. Base ---------- */
 
 /* El ancho de cada elemento incluye su relleno y su borde */
 *,
@@ -32,14 +42,16 @@
   box-sizing: border-box;
 }
 
+/* Fuente, color y fondo que todo el sitio hereda.
+   El padding inferior evita que el botón de WhatsApp tape el final */
 body {
   font-family: var(--fuente-texto);
   color: var(--azul-noche);
   background-color: var(--crema);
   line-height: 1.6;
+  padding-bottom: var(--espacio-xl);
 }
 
-/* 3. Títulos: un solo selector agrupado */
 h1,
 h2,
 h3 {
@@ -47,7 +59,11 @@ h3 {
   font-weight: 700;
 }
 
-/* 4. Enlaces generales */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 a {
   color: var(--verde-ruta);
 }
@@ -57,12 +73,39 @@ a:focus {
   color: var(--azul-noche);
 }
 
-a:focus {
+/* Indicador de foco visible para enlaces y botones */
+a:focus,
+.boton:focus {
   outline: 3px solid var(--azul-noche);
   outline-offset: 3px;
 }
 
-/* 5. Navegación */
+
+/* ---------- 3. Estructura ---------- */
+
+/* Contenedor principal centrado */
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: var(--espacio-l) var(--espacio-s);
+}
+
+/* Portada de inicio con altura relativa a la ventana */
+.portada {
+  min-height: 60vh;
+  padding-bottom: var(--espacio-l);
+}
+
+footer {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: var(--espacio-m) var(--espacio-s);
+  border-top: 1px solid var(--gris-asfalto);
+  text-align: center;
+}
+
+
+/* ---------- 4. Navegación ---------- */
 
 /* Opciones del menú en una fila */
 #menu {
@@ -96,7 +139,10 @@ a:focus {
   text-decoration: underline;
 }
 
-/* 6. Botones (llamadas a la acción y envío del formulario) */
+
+/* ---------- 5. Componentes ---------- */
+
+/* Botones: llamadas a la acción y envío del formulario */
 .boton {
   display: inline-block;
   padding: var(--espacio-xs) var(--espacio-m);
@@ -117,12 +163,108 @@ a:focus {
   color: var(--blanco);
 }
 
-.boton:focus {
-  outline: 3px solid var(--azul-noche);
-  outline-offset: 3px;
+/* Tarjetas de servicios.
+   position: relative las vuelve la referencia de la etiqueta "Nuevo" */
+article {
+  position: relative;
+  width: 100%;
+  padding: var(--espacio-m);
+  margin-bottom: var(--espacio-m);
+  border: 1px solid var(--gris-asfalto);
+  border-radius: var(--espacio-xs);
+  background-color: var(--blanco);
 }
 
-/* 7. Campos del formulario */
+article h3 {
+  margin-top: 0;
+}
+
+article img {
+  width: 100%;
+  border-radius: var(--espacio-xs);
+}
+
+/* Etiqueta "Nuevo": sale del flujo (absolute) y se ancla a la esquina
+   superior derecha de su tarjeta, sin desplazar el contenido.
+   Azul Noche sobre Naranja Pedal: 7.2:1 */
+.etiqueta {
+  position: absolute;
+  top: var(--espacio-s);
+  right: var(--espacio-s);
+  margin: 0;
+  padding: 0 var(--espacio-xs);
+  background-color: var(--naranja-pedal);
+  color: var(--azul-noche);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--espacio-xs);
+}
+
+/* Tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--espacio-m);
+  background-color: var(--blanco);
+}
+
+caption {
+  font-weight: 600;
+  padding: var(--espacio-xs);
+}
+
+th,
+td {
+  padding: var(--espacio-xs) var(--espacio-s);
+  border: 1px solid var(--gris-asfalto);
+  text-align: left;
+}
+
+thead th {
+  background-color: var(--azul-noche);
+  color: var(--blanco);
+}
+
+/* Enlace de WhatsApp: fijo en la esquina inferior derecha de la ventana.
+   Blanco sobre Verde Ruta: 5.31:1 */
+.whatsapp {
+  position: fixed;
+  right: var(--espacio-m);
+  bottom: var(--espacio-m);
+  padding: var(--espacio-xs) var(--espacio-m);
+  background-color: var(--verde-ruta);
+  color: var(--blanco);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--espacio-l);
+}
+
+.whatsapp:hover,
+.whatsapp:focus {
+  background-color: var(--azul-noche);
+  color: var(--blanco);
+}
+
+
+/* ---------- 6. Formulario ---------- */
+fieldset {
+  padding: var(--espacio-m);
+  margin-bottom: var(--espacio-m);
+  border: 1px solid var(--gris-asfalto);
+  border-radius: var(--espacio-xs);
+}
+
+legend {
+  font-family: var(--fuente-titulos);
+  padding: 0 var(--espacio-xs);
+}
+
+/* Cada etiqueta sobre su campo */
+label {
+  display: block;
+  margin-bottom: var(--espacio-xs);
+}
+
 input,
 select,
 textarea {
@@ -146,28 +288,6 @@ input[type="checkbox"] + label {
   display: inline;
 }
 
-label {
-  display: block;
-  margin-bottom: var(--espacio-xs);
-}
-
-fieldset {
-  padding: var(--espacio-m);
-  margin-bottom: var(--espacio-m);
-  border: 1px solid var(--gris-asfalto);
-  border-radius: var(--espacio-xs);
-}
-
-legend {
-  font-family: var(--fuente-titulos);
-  padding: 0 var(--espacio-xs);
-}
-
-/* Botón de envío con relleno generoso */
-form .boton {
-  padding: var(--espacio-s) var(--espacio-l);
-}
-
 input:hover,
 select:hover,
 textarea:hover {
@@ -182,60 +302,7 @@ textarea:focus {
   border-color: var(--verde-ruta);
 }
 
-/* 8. Contenedor principal centrado */
-main {
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: var(--espacio-l) var(--espacio-s);
-}
-
-/* Portada de inicio con altura relativa a la ventana */
-.portada {
-  min-height: 60vh;
-  padding-bottom: var(--espacio-l);
-}
-
-/* 9. Tarjetas de servicios */
-article {
-  width: 100%;
-  padding: var(--espacio-m);
-  margin-bottom: var(--espacio-m);
-  border: 1px solid var(--gris-asfalto);
-  border-radius: var(--espacio-xs);
-  background-color: var(--blanco);
-}
-
-article h3 {
-  margin-top: 0;
-}
-
-article img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--espacio-xs);
-}
-
-/* 10. Tablas */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: var(--espacio-m);
-  background-color: var(--blanco);
-}
-
-caption {
-  font-weight: 600;
-  padding: var(--espacio-xs);
-}
-
-th,
-td {
-  padding: var(--espacio-xs) var(--espacio-s);
-  border: 1px solid var(--gris-asfalto);
-  text-align: left;
-}
-
-thead th {
-  background-color: var(--azul-noche);
-  color: var(--blanco);
+/* Botón de envío con relleno generoso */
+form .boton {
+  padding: var(--espacio-s) var(--espacio-l);
 }

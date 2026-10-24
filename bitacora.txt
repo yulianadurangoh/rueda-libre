@@ -395,3 +395,77 @@ maximizada:
   (928 + 24 + 24 de padding + 1 + 1 de borde = 978; la tarjeta se sale
   50px de su contenedor).
 - Conclusión: border-box hace que el tamaño sea predecible.
+
+
+MINIRETO 12 - Rueda Libre v1.0: lanzamiento
+
+Sitio publicado: https://yulianadurangoh.github.io/rueda-libre/
+
+Cambios:
+- Agregué en inicio la tarjeta del servicio "Bicicletas eléctricas" con
+  la etiqueta "Nuevo" (class="etiqueta").
+- Etiqueta "Nuevo": position: absolute con top y right, dentro de una
+  tarjeta (article) con position: relative. Así queda anclada a la esquina
+  superior derecha de su tarjeta y, como sale del flujo, no desplaza el
+  contenido. Colores: Azul Noche sobre Naranja Pedal (7.2:1).
+- Enlace "WhatsApp" en las tres páginas (https://wa.me/573000000000, en
+  otra pestaña): position: fixed con bottom y right, para que siga
+  visible en la esquina inferior derecha al hacer scroll. Blanco sobre
+  Verde Ruta (5.31:1). Es un enlace <a>, así que se puede enfocar con Tab.
+- Para que el botón de WhatsApp no tape el final de las páginas, agregué
+  padding-bottom: 5rem (variable --espacio-xl) al body.
+- Pie de página con el mismo estilo en las tres páginas.
+
+Consolidación de styles.css:
+- Organicé la hoja en secciones comentadas: 1. Variables, 2. Base,
+  3. Estructura, 4. Navegación, 5. Componentes, 6. Formulario.
+- Agrupé selectores repetidos: el indicador de foco de enlaces y botones
+  quedó en una sola regla (a:focus, .boton:focus).
+- Moví reglas sueltas a su sección (box-sizing, menú en fila, campos del
+  formulario) y eliminé las duplicadas.
+- Agregué img { max-width: 100%; height: auto; } para que ninguna imagen
+  se salga de su contenedor.
+- Todos los colores siguen escritos solo en :root.
+
+Revisión final:
+- DevTools (Styles): sin declaraciones tachadas inesperadas; las únicas
+  tachadas son las que se reemplazan a propósito (por ejemplo, el color
+  de a frente a .boton, o el de #menu a frente a #menu .activo).
+- Network: sin errores 404 en las tres páginas.
+- Recorrí el sitio con el teclado una última vez: el foco se ve en el
+  menú, los enlaces, los botones, los campos y el enlace de WhatsApp.
+
+
+CIERRE DE LA SEMANA
+
+Lo que construí en cada MiniReto:
+1. Kilómetro 0: repositorio, estructura de carpetas, index.html base y
+   bitácora; análisis de la petición (200 y 404) en DevTools.
+2. La vitrina: página de inicio con jerarquía de encabezados, listas,
+   imágenes y tres tipos de enlaces.
+3. Tarifas claras: tarifas.html con dos tablas accesibles y rutas
+   relativas entre carpetas (paginas/ y ../).
+4. v0.1: reservas.html con lista de definiciones, menú y pie comunes en
+   las tres páginas y tabla de rutas.
+5. Estructura con significado: header, nav, main, section, article,
+   aside y footer en las tres páginas.
+6. Formulario de reservas: tres fieldset, controles adecuados para cada
+   dato, label con for e id y name en todos los controles.
+7. Validación y teclado: required, minlength, pattern con title, min y
+   max; 14 pruebas registradas y recorrido con teclado.
+8. v0.2: auditoría de accesibilidad (6 hallazgos corregidos), contraste
+   de la paleta verificado en WebAIM y publicación en GitHub Pages.
+9. Identidad: hoja de estilos externa, variables, Montserrat y Open Sans,
+   colores por herencia.
+10. Navegación con estados: clase activo, conflicto de especificidad
+    resuelto sin !important, botones y foco visible.
+11. Modelo de caja: border-box, contenedor centrado, tarjetas, tablas y
+    formulario ordenados con rem.
+12. v1.0: etiqueta "Nuevo" con absolute, WhatsApp con fixed, hoja de
+    estilos organizada y sitio publicado.
+
+Lo que mejoraría:
+- Adaptar el diseño a celular y tablet con media queries, Flexbox y Grid
+  (por ejemplo, tarjetas en columnas en pantallas grandes).
+- Conectar el formulario a un backend para recibir las reservas de verdad.
+- Agregar un mapa embebido y fotos propias del negocio.
