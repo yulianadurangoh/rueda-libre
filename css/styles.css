@@ -24,6 +24,14 @@
 }
 
 /* 2. Base: lo que todo el sitio hereda del body */
+
+/* El ancho de cada elemento incluye su relleno y su borde */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--fuente-texto);
   color: var(--azul-noche);
@@ -55,6 +63,19 @@ a:focus {
 }
 
 /* 5. Navegación */
+
+/* Opciones del menú en una fila */
+#menu {
+  list-style: none;
+  padding: 0;
+  margin: var(--espacio-s) 0;
+}
+
+#menu li {
+  display: inline-block;
+  margin-right: var(--espacio-m);
+}
+
 #menu a {
   color: var(--gris-asfalto);
   text-decoration: none;
@@ -105,8 +126,46 @@ a:focus {
 input,
 select,
 textarea {
+  width: 100%;
+  padding: var(--espacio-xs);
   font-family: var(--fuente-texto);
+  font-size: 1rem;
   border: 1px solid var(--gris-asfalto);
+  border-radius: var(--espacio-xs);
+}
+
+/* Las opciones únicas y la casilla no ocupan todo el ancho,
+   y su etiqueta queda al lado, no debajo */
+input[type="radio"],
+input[type="checkbox"] {
+  width: auto;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  display: inline;
+}
+
+label {
+  display: block;
+  margin-bottom: var(--espacio-xs);
+}
+
+fieldset {
+  padding: var(--espacio-m);
+  margin-bottom: var(--espacio-m);
+  border: 1px solid var(--gris-asfalto);
+  border-radius: var(--espacio-xs);
+}
+
+legend {
+  font-family: var(--fuente-titulos);
+  padding: 0 var(--espacio-xs);
+}
+
+/* Botón de envío con relleno generoso */
+form .boton {
+  padding: var(--espacio-s) var(--espacio-l);
 }
 
 input:hover,
@@ -121,4 +180,62 @@ textarea:focus {
   outline: 3px solid var(--verde-ruta);
   outline-offset: 2px;
   border-color: var(--verde-ruta);
+}
+
+/* 8. Contenedor principal centrado */
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: var(--espacio-l) var(--espacio-s);
+}
+
+/* Portada de inicio con altura relativa a la ventana */
+.portada {
+  min-height: 60vh;
+  padding-bottom: var(--espacio-l);
+}
+
+/* 9. Tarjetas de servicios */
+article {
+  width: 100%;
+  padding: var(--espacio-m);
+  margin-bottom: var(--espacio-m);
+  border: 1px solid var(--gris-asfalto);
+  border-radius: var(--espacio-xs);
+  background-color: var(--blanco);
+}
+
+article h3 {
+  margin-top: 0;
+}
+
+article img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--espacio-xs);
+}
+
+/* 10. Tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--espacio-m);
+  background-color: var(--blanco);
+}
+
+caption {
+  font-weight: 600;
+  padding: var(--espacio-xs);
+}
+
+th,
+td {
+  padding: var(--espacio-xs) var(--espacio-s);
+  border: 1px solid var(--gris-asfalto);
+  text-align: left;
+}
+
+thead th {
+  background-color: var(--azul-noche);
+  color: var(--blanco);
 }

@@ -366,3 +366,32 @@ Pruebas:
 - Recorrí las tres páginas con Tab: el foco siempre se ve.
 - Con el botón :hov de DevTools revisé los estados :hover y :focus del menú,
   los botones y los campos.
+
+MINIRETO 11 - Todo en su lugar: modelo de caja
+
+Cambios:
+- box-sizing: border-box en todos los elementos (*, *::before, *::after).
+- main con max-width: 60rem y margin: 0 auto para centrar el contenido y
+  evitar líneas de texto larguísimas en pantallas grandes.
+- Portada de inicio (class="portada") con min-height: 60vh.
+- Servicios de inicio como tarjetas: padding, borde de 1px, esquinas
+  redondeadas y separación con la escala de espaciado. Las imágenes usan
+  width: 100% para ocupar el ancho de la tarjeta sin salirse.
+- Tablas: relleno en las celdas, bordes y encabezado con fondo Azul Noche
+  y texto blanco (15.97:1). Quité el atributo border="1" del HTML porque
+  ahora los bordes los controla el CSS.
+- Formulario: cada label sobre su campo (display: block), campos a todo el
+  ancho (width: 100%), separación entre fieldset y botón de envío con más
+  relleno. Los radios y la casilla mantienen su ancho y su etiqueta al lado.
+- Menú en una fila con display: inline-block en cada li.
+- Unidades: rem para espacios, % para anchos, vh para la portada y px
+  solo en los bordes.
+
+Medición en DevTools (Computed) de una tarjeta de servicio, con la ventana
+maximizada:
+- Con box-sizing: border-box -> ancho total: 928px
+  (el padding y el borde quedan dentro del 100%).
+- Con box-sizing: content-box -> ancho total: 978px
+  (928 + 24 + 24 de padding + 1 + 1 de borde = 978; la tarjeta se sale
+  50px de su contenedor).
+- Conclusión: border-box hace que el tamaño sea predecible.
