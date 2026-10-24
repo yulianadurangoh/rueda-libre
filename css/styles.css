@@ -10,6 +10,7 @@
   --azul-noche: #14213D;
   --crema: #FAF6EF;
   --gris-asfalto: #5B6470;
+  --blanco: #FFFFFF;
 
   /* Tipografías con fuentes de respaldo */
   --fuente-titulos: "Montserrat", Arial, sans-serif;
@@ -36,4 +37,88 @@ h2,
 h3 {
   font-family: var(--fuente-titulos);
   font-weight: 700;
+}
+
+/* 4. Enlaces generales */
+a {
+  color: var(--verde-ruta);
+}
+
+a:hover,
+a:focus {
+  color: var(--azul-noche);
+}
+
+a:focus {
+  outline: 3px solid var(--azul-noche);
+  outline-offset: 3px;
+}
+
+/* 5. Navegación */
+#menu a {
+  color: var(--gris-asfalto);
+  text-decoration: none;
+}
+
+#menu a:hover,
+#menu a:focus {
+  color: var(--azul-noche);
+  text-decoration: underline;
+}
+
+/* Enlace de la página actual.
+   Conflicto: #menu a (1-0-1) le ganaba a .activo (0-1-0).
+   Solución: #menu .activo (1-1-0) tiene un ID y una clase, así que gana. */
+#menu .activo {
+  color: var(--verde-ruta);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* 6. Botones (llamadas a la acción y envío del formulario) */
+.boton {
+  display: inline-block;
+  padding: var(--espacio-xs) var(--espacio-m);
+  background-color: var(--verde-ruta);
+  color: var(--blanco);
+  font-family: var(--fuente-texto);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--espacio-xs);
+  cursor: pointer;
+}
+
+.boton:hover,
+.boton:focus {
+  background-color: var(--azul-noche);
+  color: var(--blanco);
+}
+
+.boton:focus {
+  outline: 3px solid var(--azul-noche);
+  outline-offset: 3px;
+}
+
+/* 7. Campos del formulario */
+input,
+select,
+textarea {
+  font-family: var(--fuente-texto);
+  border: 1px solid var(--gris-asfalto);
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: var(--azul-noche);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--verde-ruta);
+  outline-offset: 2px;
+  border-color: var(--verde-ruta);
 }

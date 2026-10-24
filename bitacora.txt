@@ -320,3 +320,49 @@ Comprobación de herencia en DevTools (un párrafo de inicio):
 Verificación:
 - Network: styles.css y las fuentes cargan con 200 en las tres páginas.
 - Computed: los títulos muestran Montserrat y los párrafos Open Sans.
+
+MINIRETO 10 - Navegación con estados y sin conflictos
+
+Cambios en el HTML:
+- Agregué id="menu" al ul del nav en las tres páginas.
+- Marqué con class="activo" el enlace de la página actual en cada página.
+- Agregué class="boton" a "Reservar ahora tu bicicleta" (inicio),
+  "Reservar ahora un recorrido guiado" (tarifas) y "Enviar reserva".
+
+Conflicto de especificidad:
+- Reglas del compañero:
+  #menu a { color: var(--gris-asfalto); }
+  .activo { color: var(--verde-ruta); font-weight: 600; }
+- Especificidad (IDs-clases-elementos):
+  #menu a  -> 1-0-1
+  .activo  -> 0-1-0
+- Causa: #menu a tiene un ID y .activo ninguno, así que #menu a gana
+  aunque .activo esté escrito después. En DevTools (Styles), el color de
+  .activo aparecía tachado. El font-weight: 600 sí se aplicaba, porque
+  #menu a no define font-weight y no había conflicto.
+- Solución: cambié el selector a #menu .activo (1-1-0). Empata en IDs con
+  #menu a y gana en clases. Sin !important ni estilos en línea.
+
+Estados:
+- Menú: gris normal; azul noche y subrayado en hover y focus; el activo en
+  verde, negrita y subrayado (no depende solo del color).
+- Enlaces: verde normal; azul noche en hover y focus.
+- Botones (.boton): fondo verde con texto blanco; fondo azul noche en hover
+  y focus.
+- Campos: borde gris; borde azul noche en hover; contorno verde de 3px en
+  focus.
+- Foco: los enlaces y botones tienen un contorno azul noche de 3px.
+- Agregué --blanco a :root para el texto de los botones.
+
+Contraste de los colores de texto en cada estado:
+- Gris Asfalto sobre Crema: 5.56:1
+- Verde Ruta sobre Crema: 4.93:1
+- Azul Noche sobre Crema: 14.82:1
+- Blanco sobre Verde Ruta: 5.31:1
+- Blanco sobre Azul Noche: 15.97:1
+Todos superan 4.5:1.
+
+Pruebas:
+- Recorrí las tres páginas con Tab: el foco siempre se ve.
+- Con el botón :hov de DevTools revisé los estados :hover y :focus del menú,
+  los botones y los campos.
