@@ -496,3 +496,34 @@ Qué ocurre al estrechar la ventana:
 - Pie: en pantalla ancha, los tres bloques en fila. Al estrechar, el
   último bloque baja a otra fila y, en pantallas angostas, quedan uno
   debajo del otro.
+
+  SEMANA 2 · MINIRETO 2 - La flota en cuadrícula: Grid
+
+Cambios:
+- En inicio creé la sección "Nuestra flota" con su h2. Cada modelo es un
+  article (class="bici") con imagen, nombre, descripción, precio y
+  enlace "Reservar".
+- El contenedor de las tarjetas (div class="flota") usa Grid:
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  auto-fit pone tantas columnas como quepan, minmax hace que cada
+  tarjeta mida mínimo 250px, y gap separa filas y columnas por igual.
+  No usé media queries.
+- Cada tarjeta usa Flexbox en columna (display: flex y
+  flex-direction: column). El botón "Reservar" tiene margin-top: auto,
+  que toma el espacio libre y lo deja siempre al final de la tarjeta,
+  aunque las descripciones tengan distinto largo.
+- Las tarjetas conservan el relleno, el borde y las esquinas
+  redondeadas de la semana 1.
+- Agregué un séptimo modelo (Tándem) y la cuadrícula lo acomodó sola
+  en una nueva fila, sin modificar el CSS.
+
+Columnas observadas en el modo dispositivo de DevTools:
+- 1280 px: 3 columnas
+- 900 px: 3 columnas
+- 500 px: 1 columna
+
+Decisión: uso Grid para organizar las tarjetas (dos dimensiones: filas
+y columnas) y Flexbox dentro de cada tarjeta para alinear su contenido
+(una dimensión: columna).
