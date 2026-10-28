@@ -601,3 +601,41 @@ Problemas responsive encontrados y su solución
 Publicación:
 - Rueda Libre v1.5 publicada en https://yulianadurangoh.github.io/rueda-libre/
 - La abrí en un celular real y se ve en una columna, sin scroll lateral.
+
+SEMANA 2 · MINIRETO 5 - La flota en Bootstrap: primera comparación
+
+Cambios:
+- Creé la página de pruebas pruebas/catalogo-bootstrap.html con la
+  plantilla oficial de Bootstrap 5.3 (CSS en el head y bundle de
+  JavaScript antes de </body>, ambos por CDN con integrity).
+- En Network, bootstrap.min.css y bootstrap.bundle.min.js cargan con 200.
+- Copié los siete modelos de la flota y ajusté las rutas con ../ porque
+  la página está dentro de pruebas/ (../img/bicicleta.jpeg y
+  ../paginas/reservas.html).
+- La distribución sale solo de la grilla: container > row g-4 > columnas
+  con col-12 col-sm-6 col-lg-4 col-xl-3. No enlacé styles.css ni escribí
+  CSS de distribución.
+- La apariencia de las tarjetas usa utilidades: h-100, p-3, border,
+  rounded, d-flex flex-column y mt-auto (para dejar "Reservar" al final).
+
+Columnas comprobadas en el modo dispositivo:
+- 400 px: 1 columna (col-12)
+- 600 px: 2 columnas (col-sm-6)
+- 1000 px: 3 columnas (col-lg-4)
+- 1280 px: 4 columnas (col-xl-3)
+
+Comparación con la versión en CSS propio:
+- Tiempo (aproximado, no usé cronómetro): con Bootstrap, unos 25 minutos;
+  con CSS propio en el MiniReto 2, unos 45 minutos. En los dos casos
+  trabajé siguiendo una guía paso a paso.
+- Código de distribución:
+  CSS propio: 13 líneas de CSS en 3 reglas (.flota, .bici, .bici .boton).
+  Bootstrap: 0 líneas de CSS; 7 clases de distribución en el HTML
+  (container, row, g-4, col-12, col-sm-6, col-lg-4, col-xl-3).
+- Qué me dio Bootstrap sin esfuerzo: los breakpoints ya definidos, el
+  espacio entre columnas (g-4) y que todas las tarjetas de una fila midan
+  lo mismo (h-100).
+- Qué control perdí: en CSS propio las columnas se calculaban solas con
+  auto-fit y minmax(250px, 1fr) según el espacio; en Bootstrap tengo que
+  decir exactamente cuántas columnas hay en cada breakpoint. Además, el
+  HTML queda con muchas más clases y es más largo de leer.
