@@ -469,3 +469,30 @@ Lo que mejoraría:
   (por ejemplo, tarjetas en columnas en pantallas grandes).
 - Conectar el formulario a un backend para recibir las reservas de verdad.
 - Agregar un mapa embebido y fotos propias del negocio.
+
+======================================================================
+SEMANA 2
+======================================================================
+SEMANA 2 · MINIRETO 1 - Un encabezado que se acomoda: Flexbox
+Cambios:
+- Encabezado (header) con display: flex, justify-content: space-between
+  y align-items: center: el logo queda a la izquierda, el menú a la
+  derecha y los dos a la misma altura.
+- Menú (#menu) con display: flex y gap para separar los enlaces.
+  Eliminé el display: inline-block y el margin-right de la semana 1.
+- flex-wrap: wrap en el encabezado y en el menú, para que los enlaces
+  bajen de línea en lugar de salirse de la pantalla.
+- Pie de página en tres bloques (marca, contacto y horario) con
+  display: flex, align-items: flex-start (alineados por arriba),
+  justify-content: space-between y gap.
+- Usé <div> para cada bloque del pie porque solo agrupan contenido
+  para acomodarlo con Flexbox; ninguna etiqueta semántica encaja.
+- Los estilos están en css/styles.css, por eso las tres páginas se
+  ven igual.
+Qué ocurre al estrechar la ventana:
+- Encabezado: en pantalla ancha, el logo a la izquierda y el menú a la
+  derecha. Al estrechar, el menú baja debajo del logo y, si sigue sin
+  caber, los enlaces bajan de línea sin salirse de la pantalla.
+- Pie: en pantalla ancha, los tres bloques en fila. Al estrechar, el
+  último bloque baja a otra fila y, en pantallas angostas, quedan uno
+  debajo del otro.

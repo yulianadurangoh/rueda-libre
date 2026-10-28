@@ -96,27 +96,35 @@ main {
   padding-bottom: var(--espacio-l);
 }
 
+/* Pie: tres bloques en fila, alineados por arriba */
 footer {
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: var(--espacio-m) var(--espacio-s);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1.5rem;
   border-top: 1px solid var(--gris-asfalto);
-  text-align: center;
 }
-
 
 /* ---------- 4. Navegación ---------- */
-
-/* Opciones del menú en una fila */
-#menu {
-  list-style: none;
-  padding: 0;
-  margin: var(--espacio-s) 0;
+/* Encabezado: logo a la izquierda y menú a la derecha */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
 }
 
-#menu li {
-  display: inline-block;
-  margin-right: var(--espacio-m);
+/* Menú en fila, separado con gap */
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
 }
 
 #menu a {
