@@ -27,7 +27,7 @@
     <h1>Reserva tu bicicleta</h1>
     <p>Completa el formulario y te confirmamos tu reserva. Si tienes dudas, escríbenos.</p>
     <p>Correo: <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
-
+    <div class="reserva-layout">
     <section>
       <h2>Formulario de reserva</h2>
        <form action="#" method="post">
@@ -43,6 +43,7 @@
             <label for="documento">Número de documento (solo números, de 6 a 10 dígitos)</label>
             <input type="text" id="documento" name="documento" required pattern="[0-9]{6,10}" title="Escribe solo números, entre 6 y 10 dígitos, sin puntos ni espacios">
           </p>
+          <div class="fila">
           <p>
             <label for="correo">Correo electrónico</label>
             <input type="email" id="correo" name="correo" required>
@@ -51,6 +52,7 @@
             <label for="celular">Celular (10 dígitos)</label>
             <input type="tel" id="celular" name="celular" required pattern="3[0-9]{9}" title="Escribe 10 dígitos que empiecen por 3, sin espacios. Ejemplo: 3001234567">
           </p>
+          </div>
         </fieldset>
 
         <fieldset>
@@ -133,6 +135,7 @@
         <dd>6:00 a. m. a 2:00 p. m.</dd>
       </dl>
     </aside>
+    </div>
   </main>
 <footer>
     <div>

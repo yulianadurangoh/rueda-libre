@@ -90,10 +90,13 @@ main {
   padding: var(--espacio-l) var(--espacio-s);
 }
 
-/* Portada de inicio con altura relativa a la ventana */
+/* Portada: texto a la izquierda y foto a la derecha */
 .portada {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
   min-height: 60vh;
-  padding-bottom: var(--espacio-l);
 }
 
 /* Pie: tres bloques en fila, alineados por arriba */
@@ -166,6 +169,30 @@ header {
 .bici .boton {
   margin-top: auto;
   text-align: center;
+}
+
+/* Galería de rutas: tres tarjetas en una fila */
+.rutas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Reservas: formulario (2 partes) e información (1 parte) */
+.reserva-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+/* Dos campos relacionados en la misma fila */
+.fila {
+  display: flex;
+  gap: 1rem;
+}
+
+.fila p {
+  flex: 1;
 }
 
 /* Botones: llamadas a la acción y envío del formulario */

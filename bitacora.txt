@@ -527,3 +527,34 @@ Columnas observadas en el modo dispositivo de DevTools:
 Decisión: uso Grid para organizar las tarjetas (dos dimensiones: filas
 y columnas) y Flexbox dentro de cada tarjeta para alinear su contenido
 (una dimensión: columna).
+
+SEMANA 2 · MINIRETO 3 - Layout en dos dimensiones
+Cambios:
+- Portada de inicio en dos columnas con Grid: el texto queda en un div
+  a la izquierda y la foto a la derecha.
+  grid-template-columns: 1fr 1fr y align-items: center.
+- Nueva galería "Nuestras rutas" en inicio, con tres tarjetas (foto,
+  nombre y nivel) en una fila: grid-template-columns: repeat(3, 1fr).
+- En reservas, envolví el formulario y el horario de atención en
+  div class="reserva-layout" con grid-template-columns: 2fr 1fr
+  (proporción 2:1).
+- En el formulario, correo y celular quedan en la misma fila dentro de
+  div class="fila" con display: flex y gap. Cada campo tiene flex: 1
+  para ocupar el mismo ancho.
+- Todas las columnas usan la unidad fr, no porcentajes ni px.
+- El menú, la flota y la validación del formulario siguen funcionando.
+Flexbox o Grid en cada caso:
+1. Portada: Grid. Son dos columnas (texto y foto) y necesito controlar
+   su tamaño con 1fr 1fr y centrar el texto verticalmente.
+2. Galería de rutas: Grid. Son tarjetas organizadas en columnas
+   iguales: repeat(3, 1fr).
+3. Reservas: Grid. Es la estructura de la página en dos columnas con una
+   proporción exacta, 2:1, que se define con 2fr 1fr.
+4. Fila del formulario: Flexbox. Son solo dos campos en una fila: una
+   dimensión.
+5. Encabezado: Flexbox. Es una sola fila (logo y menú) que necesita
+   mandar los elementos a los extremos y alinearlos verticalmente.
+6. Pie de página: Flexbox. Son tres bloques en una fila que bajan de
+   línea con flex-wrap cuando no caben.
+Criterio: Flexbox para una dimensión (una fila o una columna) y Grid
+para dos dimensiones o para definir columnas con medidas exactas.
