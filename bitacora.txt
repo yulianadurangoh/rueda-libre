@@ -639,3 +639,47 @@ Comparación con la versión en CSS propio:
   auto-fit y minmax(250px, 1fr) según el espacio; en Bootstrap tengo que
   decir exactamente cuántas columnas hay en cada breakpoint. Además, el
   HTML queda con muchas más clases y es más largo de leer.
+
+  SEMANA 2 · MINIRETO 6 - Sin una línea de CSS: utilidades
+
+Cambios:
+- En pruebas/catalogo-bootstrap.html, debajo de la flota, construí la
+  sección "¿Por qué Rueda Libre?": título centrado (text-center) y cuatro
+  beneficios en la grilla (col-12 col-md-6 col-lg-3).
+- Cada beneficio tiene jerarquía con utilidades: título en seminegrita
+  (h5 fw-semibold), descripción en gris (text-body-secondary) y un dato
+  destacado grande y en verde (fs-4 fw-bold text-success).
+- Franja "¿Listo para rodar?" con fondo oscuro y texto blanco
+  (bg-dark text-white). Con d-flex flex-column flex-md-row, el texto y
+  el enlace van en columna en el celular y en fila desde md, alineados
+  con align-items-center y justify-content-between y separados con gap-3.
+- Imagen decorativa con d-none d-md-block: oculta en el celular y visible
+  desde md. Tiene alt="" porque es decorativa.
+- El enlace a reservas se ve destacado solo con utilidades de color y
+  espaciado: bg-success text-white fw-bold px-4 py-3 rounded
+  text-decoration-none.
+- No usé style="", <style> ni clases inventadas. Todas las clases son de
+  Bootstrap 5.3 (uso ms-/me-, no ml-/mr-, que eran de Bootstrap 4).
+
+Decisión sobre los colores:
+- Como esta página de pruebas no carga styles.css, no puedo usar las
+  variables de marca. Usé text-success y bg-success, el verde de
+  Bootstrap, porque es el más parecido a mi Verde Ruta y el texto blanco
+  sobre ese verde cumple el contraste mínimo de 4.5:1. Para la franja usé
+  bg-dark con texto blanco, que tiene un contraste muy alto, igual que mi
+  combinación aprobada Blanco sobre Azul Noche.
+
+Cinco clases que consulté en la documentación de Bootstrap 5.3:
+1. text-body-secondary: pone el texto en un gris más suave, para las
+   descripciones (Utilities > Colors).
+2. fs-4: cambia el tamaño de la letra; de fs-1 (la más grande) a fs-6
+   (Utilities > Text).
+3. flex-md-row: pone los elementos en fila desde 768 px; antes de ese
+   ancho siguen en columna con flex-column (Utilities > Flex).
+4. d-none d-md-block: oculta el elemento en el celular y lo muestra desde
+   768 px (Utilities > Display).
+5. text-md-start: alinea el texto a la izquierda desde 768 px; en el
+   celular queda centrado con text-center (Utilities > Text).
+
+Tiempo (aproximado, no usé cronómetro): unos 20 minutos, siguiendo una
+guía paso a paso.
