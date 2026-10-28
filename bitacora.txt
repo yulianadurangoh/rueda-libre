@@ -558,3 +558,46 @@ Flexbox o Grid en cada caso:
    línea con flex-wrap cuando no caben.
 Criterio: Flexbox para una dimensión (una fila o una columna) y Grid
 para dos dimensiones o para definir columnas con medidas exactas.
+
+SEMANA 2 · MINIRETO 4 - Rueda Libre v1.5: mobile-first
+
+Cambios:
+- Reorganicé styles.css con enfoque mobile-first: los estilos base (sin
+  media query) son la versión de celular, en una sola columna. Quité
+  grid-template-columns de .portada, .rutas y .reserva-layout.
+- Media query @media (min-width: 768px) para tablet en adelante:
+  portada en 2 columnas (1fr 1fr), reservas en 2:1 (2fr 1fr),
+  encabezado y pie en fila (flex-direction: row y
+  justify-content: space-between) y celdas de tabla más amplias.
+- Media query @media (min-width: 1200px) para escritorio: galería de
+  rutas en 3 columnas (repeat(3, 1fr)).
+- Encabezado en el celular: flex-direction: column y
+  align-items: center, con el nombre del negocio arriba y el menú
+  debajo, centrado (justify-content: center en el menú).
+- La flota no necesitó media query: repeat(auto-fit, minmax(250px, 1fr))
+  ya se adapta sola.
+- Las imágenes ya eran fluidas desde la v1.0 (img con max-width: 100% y
+  height: auto), así que ninguna se sale de su contenedor.
+- Las media queries van al final del archivo para que, por la cascada,
+  puedan cambiar los estilos base.
+
+Problemas responsive encontrados y su solución
+(probados en el modo dispositivo a 360, 768 y 1280 px):
+1. Problema: en Tarifas, las tablas se salían de la pantalla en el
+   celular. La página medía 517 px en una pantalla de 360 px y había que
+   desplazarse de lado.
+   Solución: en el celular, celdas con menos relleno
+   (padding: 0.5rem 0.25rem) y letra de 0.875rem. Desde 768 px recuperan
+   su tamaño. Ahora la página mide 360 px y las tablas se leen completas.
+2. Problema: la portada, la galería de rutas y las reservas tenían
+   columnas fijas, así que en el celular se veían apretadas.
+   Solución: en los estilos base van en una columna, y las columnas se
+   agregan con media queries desde 768 px y 1200 px.
+3. Problema: en el celular, el logo y el menú quedaban amontonados en el
+   encabezado.
+   Solución: en el celular van en columna y centrados; desde 768 px
+   vuelven a quedar en extremos opuestos, como en el MiniReto 1.
+
+Publicación:
+- Rueda Libre v1.5 publicada en https://yulianadurangoh.github.io/rueda-libre/
+- La abrí en un celular real y se ve en una columna, sin scroll lateral.

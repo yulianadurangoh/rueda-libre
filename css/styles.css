@@ -93,30 +93,26 @@ main {
 /* Portada: texto a la izquierda y foto a la derecha */
 .portada {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 2rem;
   min-height: 60vh;
 }
 
-/* Pie: tres bloques en fila, alineados por arriba */
+/* Pie (móvil): tres bloques uno debajo del otro */
 footer {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 1rem;
   padding: 1.5rem;
   border-top: 1px solid var(--gris-asfalto);
 }
 
 /* ---------- 4. Navegación ---------- */
-/* Encabezado: logo a la izquierda y menú a la derecha */
+/* Encabezado (móvil): logo arriba y menú debajo, centrados */
 header {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  flex-wrap: wrap;
   gap: 1rem;
   padding: 1rem;
 }
@@ -125,9 +121,11 @@ header {
 #menu {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
   list-style: none;
   padding: 0;
+  
 }
 
 #menu a {
@@ -174,14 +172,12 @@ header {
 /* Galería de rutas: tres tarjetas en una fila */
 .rutas {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
 /* Reservas: formulario (2 partes) e información (1 parte) */
 .reserva-layout {
   display: grid;
-  grid-template-columns: 2fr 1fr;
   gap: 2rem;
 }
 
@@ -266,9 +262,11 @@ caption {
   padding: var(--espacio-xs);
 }
 
+/* Celdas (móvil): relleno y letra más pequeños para que la tabla quepa */
 th,
 td {
-  padding: var(--espacio-xs) var(--espacio-s);
+  padding: 0.5rem 0.25rem;
+  font-size: 0.875rem;
   border: 1px solid var(--gris-asfalto);
   text-align: left;
 }
@@ -358,4 +356,42 @@ textarea:focus {
 /* Botón de envío con relleno generoso */
 form .boton {
   padding: var(--espacio-s) var(--espacio-l);
+}
+
+/* ---------- 7. Responsive (mobile-first) ---------- */
+/* Tablet en adelante: desde 768px */
+@media (min-width: 768px) {
+  .portada {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .reserva-layout {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  /* Logo a la izquierda y menú a la derecha (como en el MiniReto 1) */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* Tres bloques del pie en fila */
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+   /* Desde tablet, las celdas recuperan su tamaño */
+  th,
+  td {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  
+}
+   /* Escritorio en adelante: desde 1200px */
+@media (min-width: 1200px) {
+  .rutas {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
