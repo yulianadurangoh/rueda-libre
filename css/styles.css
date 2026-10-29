@@ -173,6 +173,17 @@ article img {
   margin-bottom: 0;
 }
 
+/* Las cards de Bootstrap ya traen su relleno en card-body */
+.card {
+  padding: 0;
+}
+
+/* Fotos del carrusel: misma proporción, recortadas lo menos posible */
+.promo-img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 /* Etiqueta "Nuevo": sale del flujo (absolute) y se ancla a la esquina
    superior derecha de su tarjeta, sin desplazar el contenido.
    Azul Noche sobre Naranja Pedal: 7.2:1 */

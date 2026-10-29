@@ -852,3 +852,41 @@ Pruebas a 360 px:
 - Con el teclado: llego al botón con Tab, lo abro con Enter, recorro los
   enlaces con Tab y lo cierro con Enter.
 - Desde 992 px los enlaces se ven directamente.
+
+SEMANA 2 · MINIRETO 10 - La flota en cards y promociones que rotan
+Cambios:
+- Convertí los siete modelos de la flota en cards: article con
+  card h-100, imagen con card-img-top y cuerpo con card-body (título con
+  card-title, texto y precio con card-text). Mantuve la grilla del
+  MiniReto 7 (col-12 col-sm-6 col-lg-4 col-xl-3). El card-body usa
+  d-flex flex-column y el botón mt-auto para quedar al final.
+- Convertí las tres rutas en cards (col-12 col-md-4).
+- Las cards de cada fila tienen la misma altura gracias a h-100.
+- Conflicto: mi regla article de la semana 1 le daba padding a todos los
+  article, y la imagen de la card quedaba separada de los bordes. Lo
+  resolví con .card { padding: 0; } (una clase, 0-1-0, le gana a la
+  etiqueta article, 0-0-1). Sin !important.
+- Carrusel en inicio (id="carruselPromos", carousel slide) con las tres
+  promociones: "Martes 2x1 en bicicletas urbanas", "20 % de descuento en
+  eléctricas de lunes a jueves" y "Si cumples años, el recorrido guiado es
+  gratis". Avanza solo con data-bs-ride="carousel" y tiene controles
+  carousel-control-prev y carousel-control-next con data-bs-slide.
+- Cada imagen del carrusel tiene alt que describe la foto y la promoción.
+- Los controles tienen texto para lectores de pantalla con visually-hidden
+  ("Anterior" y "Siguiente"), y la sección tiene un h2 visually-hidden.
+- El texto de cada promoción va en carousel-caption con fondo oscuro
+  semitransparente (bg-dark bg-opacity-75) para que el blanco se lea
+  sobre la foto.
+- - Las fotos tienen la misma proporción con .promo-img { aspect-ratio:
+  16 / 9; object-fit: cover; }. Primero usé fotos verticales y una altura
+  fija (18rem), y se recortaban mucho; las cambié por fotos horizontales
+  y por una proporción, así el alto se ajusta al ancho de la pantalla.
+- Cambié la foto del cumpleaños porque la primera tenía la marca de agua
+  de un banco de imágenes de pago; usé una foto gratuita.
+- Revisé styles.css: las reglas de tarjetas propias (article, article h3,
+  article img, .row article y .etiqueta) se siguen usando en "Nuestros
+  servicios" y en los beneficios, así que no quedó ninguna sin uso.
+Pruebas:
+- El carrusel avanza solo, con las flechas y con el teclado (Tab y Enter).
+- Flota y rutas revisadas a 360, 768 y 1280 px: las cards de cada fila
+  tienen la misma altura.
