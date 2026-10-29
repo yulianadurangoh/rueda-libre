@@ -810,3 +810,45 @@ Publicación:
 - Revisé las tres páginas a 360, 768 y 1280 px.
 - Rueda Libre v2.0-beta publicada en
   https://yulianadurangoh.github.io/rueda-libre/
+
+  ======================================================================
+SEMANA 2 · DÍA 3
+======================================================================
+
+SEMANA 2 · MINIRETO 9 - Menú para el celular: navbar y botones
+
+Cambios:
+- Reemplacé el encabezado de las tres páginas por una navbar de Bootstrap:
+  navbar navbar-expand-lg, con el logo como navbar-brand, el botón
+  navbar-toggler y los enlaces dentro de collapse navbar-collapse con
+  id="menuPrincipal". Desde lg (992 px) se ven los enlaces; por debajo
+  aparece el botón de menú.
+- El data-bs-target="#menuPrincipal" del botón coincide con el
+  id="menuPrincipal" del contenedor en las tres páginas.
+- Marqué la página actual con nav-link active y aria-current="page"
+  (reemplaza mi clase activo de la semana 1). En cada página está en su
+  propio enlace.
+- El botón de menú tiene aria-label="Abrir menú de navegación" para los
+  lectores de pantalla.
+- Eliminé de styles.css las reglas header, #menu y el header de la media
+  query de 768 px: chocaban con la navbar (la dejaban apretada y centrada).
+- Cambié #menu a, #menu a:hover y #menu .activo por .navbar .nav-link,
+  .navbar .nav-link:hover/:focus y .navbar .nav-link.active, para
+  conservar los colores de la marca (gris normal, azul noche al pasar y
+  verde en la página actual). .navbar .nav-link.active (0-3-0) le gana a
+  Bootstrap sin !important.
+- El bundle de JavaScript se carga una sola vez por página, antes de
+  </body> (verificado en Network).
+
+Botones (criterio):
+- Reservar (acción principal): btn btn-primary. Grande (btn-lg) en
+  "Reservar ahora tu bicicleta", "Reservar ahora un recorrido guiado" y
+  "Enviar reserva"; pequeño (btn-sm) en los "Reservar" de la flota.
+- Consultar (acción secundaria): btn btn-outline-primary en "Consulta
+  nuestras tarifas".
+
+Pruebas a 360 px:
+- Con el mouse: el botón de menú abre y cierra los enlaces.
+- Con el teclado: llego al botón con Tab, lo abro con Enter, recorro los
+  enlaces con Tab y lo cierro con Enter.
+- Desde 992 px los enlaces se ven directamente.

@@ -109,47 +109,23 @@ footer {
   border-top: 1px solid var(--gris-asfalto);
 }
 
-/* ---------- 4. Navegación ---------- */
-/* Encabezado (móvil): logo arriba y menú debajo, centrados */
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-}
-
-/* Menú en fila, separado con gap */
-#menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  list-style: none;
-  padding: 0;
-  
-}
-
-#menu a {
+/* Enlaces de la navbar con los colores de la marca */
+.navbar .nav-link {
   color: var(--gris-asfalto);
-  text-decoration: none;
 }
 
-#menu a:hover,
-#menu a:focus {
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
   color: var(--azul-noche);
   text-decoration: underline;
 }
 
-/* Enlace de la página actual.
-   Conflicto: #menu a (1-0-1) le ganaba a .activo (0-1-0).
-   Solución: #menu .activo (1-1-0) tiene un ID y una clase, así que gana. */
-#menu .activo {
+/* Página actual (Bootstrap la marca con la clase active) */
+.navbar .nav-link.active {
   color: var(--verde-ruta);
   font-weight: 600;
   text-decoration: underline;
 }
-
 /* Botones: llamadas a la acción y envío del formulario */
 .boton {
   display: inline-block;
@@ -326,12 +302,6 @@ form .boton {
 /* Tablet en adelante: desde 768px */
 @media (min-width: 768px) {
   
-
-  /* Logo a la izquierda y menú a la derecha (como en el MiniReto 1) */
-  header {
-    flex-direction: row;
-    justify-content: space-between;
-  }
 
   /* Tres bloques del pie en fila */
   footer {

@@ -19,14 +19,21 @@
 </head>
 
 <body>
-  <header>
-    <a href="../index.html"><img src="../img/logo.svg" alt="Rueda Libre, ir al inicio" width="200"></a>
-    <nav>
-      <ul id="menu">
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="tarifas.html">Tarifas y rutas</a></li>
-        <li><a href="reservas.html" class="activo">Reservas</a></li>
-      </ul>
+   <header>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html"><img src="../img/logo.svg" alt="Rueda Libre, ir al inicio" width="200"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="tarifas.html">Tarifas y rutas</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="reservas.html">Reservas</a></li>
+          </ul>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -130,7 +137,7 @@
             </p>
           </fieldset>
 
-          <p><button type="submit" class="boton">Enviar reserva</button></p>
+          <p><button type="submit" class="btn btn-primary btn-lg">Enviar reserva</button></p>
         </form>
 
       </section>
