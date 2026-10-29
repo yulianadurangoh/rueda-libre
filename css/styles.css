@@ -59,6 +59,11 @@ h3 {
   font-weight: 700;
 }
 
+/* Bootstrap agranda los h3; los dejo de un tamaño más moderado */
+h3 {
+  font-size: 1.25rem;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -90,12 +95,9 @@ main {
   padding: var(--espacio-l) var(--espacio-s);
 }
 
-/* Portada: texto a la izquierda y foto a la derecha */
-.portada {
-  display: grid;
-  align-items: center;
-  gap: 2rem;
-  min-height: 60vh;
+/* Bootstrap quita el margen de arriba de los títulos; separo las secciones */
+main section {
+  margin-bottom: 2rem;
 }
 
 /* Pie (móvil): tres bloques uno debajo del otro */
@@ -148,32 +150,6 @@ header {
   text-decoration: underline;
 }
 
-
-/* ---------- 5. Componentes ---------- */
-/* Flota: columnas automáticas según el espacio */
-.flota {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-/* Cada tarjeta: contenido en columna */
-.bici {
-  display: flex;
-  flex-direction: column;
-}
-
-/* El botón ocupa el espacio libre de arriba y queda al final */
-.bici .boton {
-  margin-top: auto;
-  text-align: center;
-}
-
-/* Galería de rutas: tres tarjetas en una fila */
-.rutas {
-  display: grid;
-  gap: 1.5rem;
-}
 
 /* Reservas: formulario (2 partes) e información (1 parte) */
 .reserva-layout {
@@ -231,6 +207,11 @@ article h3 {
 article img {
   width: 100%;
   border-radius: var(--espacio-xs);
+}
+
+/* Dentro de la grilla de Bootstrap, el espacio lo da g-4 */
+.row article {
+  margin-bottom: 0;
 }
 
 /* Etiqueta "Nuevo": sale del flujo (absolute) y se ancla a la esquina
@@ -361,10 +342,6 @@ form .boton {
 /* ---------- 7. Responsive (mobile-first) ---------- */
 /* Tablet en adelante: desde 768px */
 @media (min-width: 768px) {
-  .portada {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .reserva-layout {
     grid-template-columns: 2fr 1fr;
   }
@@ -389,9 +366,4 @@ form .boton {
   }
   
 }
-   /* Escritorio en adelante: desde 1200px */
-@media (min-width: 1200px) {
-  .rutas {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+  

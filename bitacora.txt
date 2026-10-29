@@ -683,3 +683,57 @@ Cinco clases que consulté en la documentación de Bootstrap 5.3:
 
 Tiempo (aproximado, no usé cronómetro): unos 20 minutos, siguiendo una
 guía paso a paso.
+
+SEMANA 2 · MINIRETO 7 - Inicio migra a Bootstrap
+
+Cambios:
+- Agregué Bootstrap 5.3 (CSS y bundle de JavaScript por CDN) a
+  index.html. Mi styles.css se carga DESPUÉS de bootstrap.min.css.
+- Moví los <link> de las fuentes y de styles.css dentro del <head>
+  (estaban afuera por un error de la semana pasada).
+- Portada: row align-items-center g-4 con dos columnas col-12 col-md-6
+  (texto y foto). La imagen usa img-fluid rounded.
+- Flota: traje el marcado del MiniReto 5, con col-12 col-sm-6 col-lg-4
+  col-xl-3. Las rutas no llevan ../ porque index.html está en la raíz.
+  El enlace "Reservar" conserva mi clase boton y usa mt-auto para quedar
+  al final de la tarjeta.
+- Rutas: row g-4 con col-12 col-md-4 (tres en fila desde 768 px).
+- Beneficios: traje la sección del MiniReto 6 con col-12 col-md-6 col-lg-3.
+  Quité text-success y las clases de tamaño del título para que usen los
+  colores y las fuentes de mi marca.
+- Eliminé de styles.css las reglas de distribución que inicio ya no
+  necesita: .portada, .flota, .bici, .bici .boton, .rutas, la media query
+  de 1200 px y el .portada de la media query de 768 px.
+- Marqué con un comentario .reserva-layout y .fila, que todavía usa
+  reservas.html (se migra en el MiniReto 8).
+
+Conflictos entre mis estilos y Bootstrap (encontrados con DevTools, Styles):
+1. Tamaño de los títulos h3.
+   Problema: Bootstrap define h3 { font-size: 1.75rem } en pantallas
+   grandes, y mis títulos de tarjeta se veían demasiado grandes. Mi regla
+   h1, h2, h3 solo cambiaba la fuente y el grosor, no el tamaño.
+   Solución: agregué h3 { font-size: 1.25rem; } en styles.css. Como mi
+   hoja se carga después, gana mi tamaño.
+2. Espacio entre secciones.
+   Problema: el reboot de Bootstrap pone margin-top: 0 en los títulos, así
+   que las secciones quedaron pegadas (por ejemplo, "Nuestros servicios"
+   casi tocaba la lista de arriba).
+   Solución: main section { margin-bottom: 2rem; } para separar las
+   secciones.
+3. Color de los enlaces.
+   Problema: Bootstrap define a { color: azul } en _reboot.scss.
+   Solución: no tuve que escribir nada. Mi regla a { color: var(--verde-ruta) }
+   tiene la misma especificidad (0-0-1) y, como styles.css se carga
+   después de Bootstrap, gana por la cascada. En DevTools la regla de
+   Bootstrap aparece tachada.
+Además: mi regla article tenía margin-bottom, que se sumaba al gutter g-4
+de la grilla. Lo quité solo dentro de las filas con .row article
+{ margin-bottom: 0; }, porque los servicios fuera de la grilla sí lo
+necesitan.
+- Resolví todo sin !important.
+
+Pruebas:
+- Inicio a 360 px: todo en una columna, sin scroll lateral.
+- 768 px: portada en 2 columnas, flota en 2, rutas en 3, beneficios en 2.
+- 1280 px: flota en 4 columnas y beneficios en 4.
+- Se mantienen las fuentes (Montserrat y Open Sans) y los colores de marca.
