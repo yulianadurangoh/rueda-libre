@@ -45,9 +45,7 @@
 /* ---------- 2. Base ---------- */
 
 /* El ancho de cada elemento incluye su relleno y su borde */
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
 
@@ -100,7 +98,8 @@ a:focus,
 /* El contenedor principal ahora es el .container de Bootstrap;
    solo le doy espacio arriba y abajo */
 main {
-  padding-block: var(--espacio-l);
+  padding-top: var(--espacio-l);
+  padding-bottom: var(--espacio-l);
 }
 
 /* Bootstrap quita el margen de arriba de los títulos; separo las secciones */
@@ -175,7 +174,8 @@ footer {
 /* Portada: una franja naranja abajo, como sello de la marca */
 .portada-marca {
   border-bottom: 4px solid var(--naranja-pedal);
-  padding-block: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 /* Títulos de sección con una línea verde debajo */
@@ -233,9 +233,7 @@ article img {
   object-fit: cover;
 }
 
-/* Etiqueta "Nuevo": sale del flujo (absolute) y se ancla a la esquina
-   superior derecha de su tarjeta, sin desplazar el contenido.
-   Azul Noche sobre Naranja Pedal: 7.2:1 */
+/* Etiqueta "Nuevo" en la esquina de la tarjeta (contraste 7.2:1) */
 .etiqueta {
   position: absolute;
   top: var(--espacio-s);
