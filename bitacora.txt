@@ -737,3 +737,76 @@ Pruebas:
 - 768 px: portada en 2 columnas, flota en 2, rutas en 3, beneficios en 2.
 - 1280 px: flota en 4 columnas y beneficios en 4.
 - Se mantienen las fuentes (Montserrat y Open Sans) y los colores de marca.
+
+SEMANA 2 · MINIRETO 8 - Rueda Libre v2.0-beta: migración completa
+
+Cambios:
+- Tarifas y reservas: agregué Bootstrap 5.3 (CSS y bundle por CDN) y moví
+  los <link> dentro del <head>. styles.css se carga después de Bootstrap.
+- Tarifas: las tablas y la información complementaria están en una fila
+  (row g-4). Las dos tablas van en col-12 col-lg-8 y la información
+  importante en col-12 col-lg-4: dos columnas desde lg (992 px) y una
+  columna en celular y tablet. Conservé los estilos de tabla de la
+  semana 1. También agregué el </section> que le faltaba a la sección de
+  recorridos.
+- Reservas: el formulario y el horario de atención están en una fila
+  (row g-4). La section del formulario es col-12 col-md-8 y el aside del
+  horario es col-12 col-md-4 (8/4 desde md). La grilla funciona con
+  cualquier etiqueta, así que no hizo falta agregar div.
+- Correo y celular usan la grilla: row g-3 con dos columnas
+  col-12 col-sm-6 (uno debajo del otro en el celular y lado a lado desde
+  576 px). Antes usaban mi clase .fila con Flexbox y en el celular
+  quedaban apretados.
+- El formulario conserva todas sus reglas de validación nativa
+  (required, minlength, pattern con title, min y max). Lo comprobé
+  enviándolo vacío.
+- Limpieza de styles.css: eliminé .reserva-layout, .fila, .fila p y el
+  .reserva-layout de la media query de 768 px. Ahora styles.css solo tiene
+  identidad visual: variables, tipografía, colores, menú, botones y
+  estados, tarjetas, etiqueta "Nuevo", WhatsApp, tablas y formulario.
+
+Comparativa final: CSS propio vs Bootstrap
+- Líneas de styles.css (consultadas en el historial de commits de GitHub):
+  v1.5: 397 líneas en total (294 de código, sin comentarios ni líneas
+  vacías).
+  v2.0-beta: 350 líneas en total (258 de código).
+  Reducción: 47 líneas en total (36 de código). Desapareció toda la
+  distribución: .portada, .flota, .bici, .rutas, .reserva-layout, .fila y
+  sus media queries.
+- Tiempo (aproximado, no usé cronómetro):
+  v1.5 con CSS propio (MiniRetos 1 a 4): unas 3 horas.
+  v2.0-beta con Bootstrap (MiniRetos 5 a 8): unas 2 horas y media.
+  En los dos casos trabajé siguiendo una guía paso a paso. La migración
+  tomó casi lo mismo porque tuve que corregir errores del HTML y resolver
+  conflictos; hacer una página nueva con Bootstrap desde cero sería más
+  rápido.
+- Ventajas observadas:
+  · Los breakpoints, el espacio entre columnas (g-*) y el centrado del
+    contenido ya vienen listos.
+  · Para cambiar una distribución solo cambio clases en el HTML, sin
+    escribir ni buscar reglas en el CSS.
+  · styles.css quedó más corto y solo con lo que es propio de la marca.
+- Desventajas observadas:
+  · El HTML tiene muchas más clases y es más largo de leer.
+  · Bootstrap cambia estilos por defecto (tamaño de los títulos, márgenes)
+    y hubo que resolver conflictos con DevTools.
+  · Hay que decir exactamente cuántas columnas hay en cada breakpoint; con
+    auto-fit y minmax las columnas se calculaban solas.
+  · Hay que aprender sus clases y revisar que sean de la versión 5.3.
+- Conflictos resueltos durante la migración: el tamaño de los h3, el
+  espacio entre secciones (margin-top: 0 de Bootstrap), el color de los
+  enlaces (ganó mi verde por la cascada) y el margen de las tarjetas que
+  se sumaba al gutter. Todo sin !important.
+
+Conclusión:
+Bootstrap sí redujo el trabajo de distribución: ya no escribo grillas
+ni media queries, y styles.css quedó más corto y ordenado. Pero no
+reemplaza saber CSS: para resolver los conflictos tuve que entender la
+cascada, la especificidad y el modelo de caja. Para un sitio con muchas
+páginas y en equipo, Bootstrap ahorra tiempo y mantiene todo consistente;
+para algo muy personalizado o pequeño, el CSS propio da más control.
+
+Publicación:
+- Revisé las tres páginas a 360, 768 y 1280 px.
+- Rueda Libre v2.0-beta publicada en
+  https://yulianadurangoh.github.io/rueda-libre/

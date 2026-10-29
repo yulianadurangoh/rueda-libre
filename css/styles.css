@@ -150,23 +150,6 @@ header {
   text-decoration: underline;
 }
 
-
-/* Reservas: formulario (2 partes) e información (1 parte) */
-.reserva-layout {
-  display: grid;
-  gap: 2rem;
-}
-
-/* Dos campos relacionados en la misma fila */
-.fila {
-  display: flex;
-  gap: 1rem;
-}
-
-.fila p {
-  flex: 1;
-}
-
 /* Botones: llamadas a la acción y envío del formulario */
 .boton {
   display: inline-block;
@@ -342,9 +325,7 @@ form .boton {
 /* ---------- 7. Responsive (mobile-first) ---------- */
 /* Tablet en adelante: desde 768px */
 @media (min-width: 768px) {
-  .reserva-layout {
-    grid-template-columns: 2fr 1fr;
-  }
+  
 
   /* Logo a la izquierda y menú a la derecha (como en el MiniReto 1) */
   header {
