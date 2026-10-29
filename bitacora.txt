@@ -890,3 +890,47 @@ Pruebas:
 - El carrusel avanza solo, con las flechas y con el teclado (Tab y Enter).
 - Flota y rutas revisadas a 360, 768 y 1280 px: las cards de cada fila
   tienen la misma altura.
+
+  SEMANA 2 · MINIRETO 11 - Reservas confiables: validación visual, alerta y modal
+Cambios:
+- Apliqué las clases de formulario de Bootstrap a todos los controles:
+  form-label, form-control (inputs y textarea), form-select (lista de
+  recorridos), form-check, form-check-input y form-check-label (radios y
+  casilla).
+- Cambié el <p> de cada campo por <div class="mb-3">, porque el mensaje
+  de error (div.invalid-feedback) no puede ir dentro de un <p>.
+- Conservé todas las reglas de validación nativa de la semana 1:
+  required, minlength, pattern con title, min y max.
+- Activé la validación visual: class="needs-validation" y novalidate en
+  el formulario, y el script oficial de la documentación de Bootstrap
+  copiado sin cambios (agrega was-validated al enviar y bloquea el envío
+  si hay errores).
+- Escribí un mensaje de error específico para cada campo obligatorio
+  (div.invalid-feedback), que explica cómo corregirlo. Por ejemplo:
+  "Escribe 10 dígitos que empiecen por 3, sin espacios. Ejemplo:
+  3001234567". En los grupos de radios, el mensaje va en la última opción.
+- Alerta informativa arriba del formulario (alert alert-info
+  alert-dismissible fade show, role="alert") con el recordatorio del
+  documento, y un botón btn-close con data-bs-dismiss="alert" y
+  aria-label="Cerrar aviso".
+- Modal "Políticas de alquiler" (id="modalPoliticas") con las cinco
+  políticas en una lista numerada. Se abre desde el botón "Leer las
+  políticas", junto a la casilla de aceptación, con data-bs-toggle="modal"
+  y data-bs-target="#modalPoliticas". Tiene modal-header, modal-body y
+  modal-footer, y aria-labelledby apunta a su título.
+- Error que corregí: al pegar el script de validación quedó en medio de
+  la etiqueta <script> del bundle (que estaba escrita en varias líneas), y
+  el bundle dejó de funcionar. Los separé en dos <script>.
+Pruebas:
+- Al enviar el formulario vacío no se envía y aparecen los nueve mensajes
+  de error, uno por campo obligatorio.
+- Al corregir cada campo, se pone en verde.
+- Las reglas nativas siguen funcionando: el celular "123", la cantidad 7 y
+  el nombre "Al" se marcan como inválidos.
+- La alerta se cierra con su botón.
+- El modal se abre desde "Leer las políticas" y se cierra con la X, con
+  "Entendido" y con la tecla Esc. Lo probé con el mouse y con el teclado
+  (Tab, Enter y Esc).
+- Con todos los datos correctos, el formulario se envía y Live Server
+  responde 405 Not Allowed: es esperado, porque no hay un backend que
+  reciba los datos (igual que en la semana 1).
