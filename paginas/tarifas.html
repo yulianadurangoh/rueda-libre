@@ -14,6 +14,7 @@
   <!-- 1. Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">  
   <!-- 2. Mis estilos, siempre DESPUÉS de Bootstrap -->
   <link rel="stylesheet" href="../css/styles.css">
 </head>
@@ -28,23 +29,23 @@
         </button>
         <div class="collapse navbar-collapse" id="menuPrincipal">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link active" aria-current="page" href="tarifas.html">Tarifas y rutas</a></li>
-            <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house" aria-hidden="true"></i> Inicio</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="tarifas.html"><i class="bi bi-tags" aria-hidden="true"></i> Tarifas y rutas</a></li>
+            <li class="nav-item"><a class="nav-link" href="reservas.html"><i class="bi bi-calendar-check" aria-hidden="true"></i> Reservas</a></li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
 
-  <main>
+  <main class="container">
     <h1>Tarifas y recorridos</h1>
 
     <div class="row g-4">
       <div class="col-12 col-lg-8">
 
         <section>
-          <h2>Alquiler de bicicletas</h2>
+          <h2 class="titulo-seccion">Alquiler de bicicletas</h2>
           <table>
             <caption>Tarifas de alquiler por tipo de bicicleta</caption>
             <thead>
@@ -79,7 +80,7 @@
         </section>
 
         <section id="recorridos">
-          <h2>Recorridos guiados</h2>
+          <h2 class="titulo-seccion">Recorridos guiados</h2>
           <table>
             <caption>Recorridos guiados disponibles</caption>
             <thead>
@@ -121,7 +122,7 @@
       <div class="col-12 col-lg-4">
 
         <aside>
-          <h2>Información importante</h2>
+          <h2 class="titulo-seccion">Información importante</h2>
           <p>Todas las tarifas <strong>incluyen casco y candado</strong>.</p>
           <p>Los recorridos salen <strong>sábados y domingos a las 7:00 a. m.</strong></p>
           <p>Qué llevar:</p>
@@ -136,22 +137,21 @@
     </div>
   </main>
 
-  <footer>
+  <footer class="pie-marca">
     <div>
       <p><strong>Rueda Libre</strong></p>
       <p>Alquiler de bicicletas en Medellín.</p>
     </div>
     <div>
       <p><strong>Contacto</strong></p>
-      <p><a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
+      <p><i class="bi bi-envelope" aria-hidden="true"></i> <a href="mailto:hola@ruedalibre.example">hola@ruedalibre.example</a></p>
     </div>
     <div>
       <p><strong>Horario</strong></p>
-      <p>Lunes a sábado: 7:00 a. m. a 7:00 p. m.</p>
+      <p><i class="bi bi-clock" aria-hidden="true"></i> Lunes a sábado: 7:00 a. m. a 7:00 p. m.</p>
     </div>
   </footer>
-
-  <a href="https://wa.me/573000000000" target="_blank" class="whatsapp">WhatsApp</a>
+  <a href="https://wa.me/573000000000" target="_blank" class="whatsapp"><i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp</a>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script>

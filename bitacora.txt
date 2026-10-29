@@ -934,3 +934,115 @@ Pruebas:
 - Con todos los datos correctos, el formulario se envía y Live Server
   responde 405 Not Allowed: es esperado, porque no hay un backend que
   reciba los datos (igual que en la semana 1).
+
+SEMANA 2 · MINIRETO 12 - Rueda Libre v2.0: con identidad propia
+
+Variables globales de Bootstrap (en :root de styles.css, que se carga
+después de Bootstrap):
+- --bs-primary: #1E7A4F y --bs-primary-rgb: 30, 122, 79 (Verde Ruta).
+  Hay que cambiar las dos porque utilidades como text-primary y
+  bg-primary usan la versión RGB.
+- --bs-body-font-family: "Open Sans" (fuente del cuerpo).
+- --bs-body-bg: #FAF6EF (fondo Crema).
+- --bs-link-color-rgb: 30, 122, 79 y --bs-link-hover-color-rgb:
+  20, 33, 61 (enlaces verdes y Azul Noche al pasar el mouse).
+- --bs-border-radius: 0.5rem (esquinas de cards, campos y alertas).
+
+Variables del componente botón:
+- .btn-primary con --bs-btn-bg Verde Ruta, hover #17633F y active
+  #114A2F (cada estado más oscuro). Texto blanco.
+- .btn-outline-primary con texto y borde Verde Ruta; en hover y active,
+  fondo verde con texto blanco.
+- Aprendizaje: los botones no usan --bs-primary, tienen sus propias
+  variables (--bs-btn-*), por eso hubo que cambiarlas aparte.
+- Variante propia .btn-naranja: fondo Naranja Pedal con texto Azul Noche
+  (7.2:1). No usé texto blanco porque blanco sobre naranja da 2.21:1 y no
+  cumple. La uso en "Ver recorridos y precios".
+- Convertí en botones dos llamadas a la acción que seguían como enlaces:
+  "Ver recorridos y precios" (btn-naranja) y "Ver tarifas"
+  (btn-outline-primary).
+
+Clases propias que complementan a Bootstrap (sin modificar sus clases):
+1. .portada-marca: franja naranja debajo de la portada.
+2. .titulo-seccion: títulos de sección en Azul Noche con una línea verde
+   debajo (en los h2 de las tres páginas).
+3. .pie-marca: pie con fondo Azul Noche y texto blanco (15.97:1), en las
+   tres páginas.
+Además conservo .etiqueta, .whatsapp y .promo-img de semanas anteriores.
+
+Bootstrap Icons (CDN bootstrap-icons@1.13.1, en las tres páginas):
+- Navbar: bi-house, bi-tags y bi-calendar-check.
+- Datos de contacto: bi-envelope (correo) y bi-clock (horario) en el
+  pie, y bi-geo-alt (dirección) en "Encuéntranos".
+- Beneficios: bi-tools, bi-shield-check, bi-person-badge y bi-geo-alt,
+  grandes (fs-1) y en verde (text-primary, que ya toma mi color).
+- WhatsApp: bi-whatsapp.
+- Todos son decorativos porque acompañan un texto, así que llevan
+  aria-hidden="true". El único botón que es solo ícono es el de la navbar
+  (☰), y ya tiene aria-label="Abrir menú de navegación".
+
+Revisión de errores comunes:
+- Sin !important en styles.css.
+- Sin clases de Bootstrap 4 (data-toggle, ml-, mr-): uso data-bs-* y ms-.
+- styles.css se carga después de bootstrap.min.css en las tres páginas.
+- El bundle de JavaScript se carga una sola vez por página.
+- Estructura container > row > col: el <main> de las tres páginas ahora
+  tiene la clase container (antes las filas estaban fuera de un
+  container). Por eso cambié mi regla main: ya no necesita max-width ni
+  margin: 0 auto, solo padding-block.
+- Eliminé las reglas .boton, .boton:hover y form .boton, que ya no usa
+  ningún HTML (todos los botones son de Bootstrap).
+- Corregí los enlaces de la navbar de tarifas: tenían las rutas de
+  index.html (paginas/reservas.html) y llevaban a una página que no
+  existe; ahora usan ../index.html, tarifas.html y reservas.html.
+
+Contraste de las combinaciones de texto y fondo (todas ≥ 4.5:1):
+- Blanco sobre Verde Ruta (botones): 5.31:1
+- Verde Ruta sobre Crema (enlaces, botón de contorno): 4.93:1
+- Azul Noche sobre Naranja Pedal (botón naranja, etiqueta Nuevo): 7.2:1
+- Azul Noche sobre Crema (títulos y texto): 14.82:1
+- Blanco sobre Azul Noche (pie): 15.97:1
+- Gris Asfalto sobre Crema (enlaces del menú): 5.56:1
+
+Prueba final:
+- Revisé las tres páginas a 360, 768 y 1280 px: sin desplazamiento
+  lateral y con los colores de la marca.
+- Teclado: recorrí el menú, el carrusel, el formulario, la alerta y el
+  modal con Tab, Enter, flechas y Esc.
+- Capturas "antes y después" de personalizar en img/capturas/.
+
+
+======================================================================
+CIERRE DE LA SEMANA 2
+======================================================================
+
+Lo que construí:
+- MiniRetos 1 a 4 (CSS propio): encabezado y pie con Flexbox, la flota
+  con Grid, layout en dos dimensiones y la v1.5 mobile-first.
+- MiniRetos 5 a 8 (Bootstrap): la flota y los beneficios en una página
+  de pruebas, y la migración de las tres páginas a la grilla y las
+  utilidades (v2.0-beta).
+- MiniRetos 9 a 12 (componentes y personalización): navbar colapsable,
+  botones, cards, carrusel, formulario con validación visual, alerta,
+  modal, variables de Bootstrap, clases propias e íconos (v2.0).
+
+Comparativa CSS propio vs Bootstrap:
+- Bootstrap me ahorró escribir grillas y media queries, y me dio
+  componentes listos (navbar, carrusel, modal) que con CSS propio
+  necesitarían mucho más código y JavaScript.
+- Pero no reemplaza saber CSS: tuve que resolver conflictos con la
+  cascada y la especificidad, y entender que cada componente tiene sus
+  propias variables.
+- Sin personalizar, el sitio "se parecía a mil sitios"; con las
+  variables --bs-* y clases propias recuperó la identidad de la marca sin
+  pelear con el framework (sin !important ni modificar bootstrap.min.css).
+
+Conflictos resueltos durante la semana: tamaño de los h3, espacio entre
+secciones, color de los enlaces, margen y relleno de las tarjetas,
+encabezado viejo que apretaba la navbar, botones azules que no tomaban
+--bs-primary, rutas de la navbar en tarifas y filas fuera de un container.
+
+Lo que mejoraría:
+- Conectar el formulario a un backend para recibir las reservas.
+- Un modo oscuro con las variables de Bootstrap.
+- Imágenes propias de la flota (hoy varias tarjetas usan la misma foto).

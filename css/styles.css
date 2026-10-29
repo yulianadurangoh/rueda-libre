@@ -1,5 +1,5 @@
 /* =========================================
-   RUEDA LIBRE · Hoja de estilos (v1.0)
+   RUEDA LIBRE · Hoja de estilos (v2.0)
    Secciones:
    1. Variables
    2. Base
@@ -30,6 +30,15 @@
   --espacio-m: 1.5rem;
   --espacio-l: 2rem;
   --espacio-xl: 5rem;
+  
+  /* Variables de Bootstrap con los valores de la marca */
+  --bs-primary: #1E7A4F;
+  --bs-primary-rgb: 30, 122, 79;
+  --bs-body-font-family: "Open Sans", Arial, sans-serif;
+  --bs-body-bg: #FAF6EF;
+  --bs-link-color-rgb: 30, 122, 79;
+  --bs-link-hover-color-rgb: 20, 33, 61;
+  --bs-border-radius: 0.5rem;
 }
 
 
@@ -80,7 +89,7 @@ a:focus {
 
 /* Indicador de foco visible para enlaces y botones */
 a:focus,
-.boton:focus {
+.btn:focus {
   outline: 3px solid var(--azul-noche);
   outline-offset: 3px;
 }
@@ -88,11 +97,10 @@ a:focus,
 
 /* ---------- 3. Estructura ---------- */
 
-/* Contenedor principal centrado */
+/* El contenedor principal ahora es el .container de Bootstrap;
+   solo le doy espacio arriba y abajo */
 main {
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: var(--espacio-l) var(--espacio-s);
+  padding-block: var(--espacio-l);
 }
 
 /* Bootstrap quita el margen de arriba de los títulos; separo las secciones */
@@ -126,24 +134,65 @@ footer {
   font-weight: 600;
   text-decoration: underline;
 }
-/* Botones: llamadas a la acción y envío del formulario */
-.boton {
-  display: inline-block;
-  padding: var(--espacio-xs) var(--espacio-m);
-  background-color: var(--verde-ruta);
-  color: var(--blanco);
-  font-family: var(--fuente-texto);
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  border: none;
-  border-radius: var(--espacio-xs);
-  cursor: pointer;
+
+/* Botón principal (btn-primary) con Verde Ruta */
+.btn-primary {
+  --bs-btn-bg: #1E7A4F;
+  --bs-btn-border-color: #1E7A4F;
+  --bs-btn-hover-bg: #17633F;
+  --bs-btn-hover-border-color: #17633F;
+  --bs-btn-active-bg: #114A2F;
+  --bs-btn-active-border-color: #114A2F;
 }
 
-.boton:hover,
-.boton:focus {
+/* Botón de contorno (btn-outline-primary) con Verde Ruta */
+.btn-outline-primary {
+  --bs-btn-color: #1E7A4F;
+  --bs-btn-border-color: #1E7A4F;
+  --bs-btn-hover-color: #FFFFFF;
+  --bs-btn-hover-bg: #1E7A4F;
+  --bs-btn-hover-border-color: #1E7A4F;
+  --bs-btn-active-color: #FFFFFF;
+  --bs-btn-active-bg: #17633F;
+  --bs-btn-active-border-color: #17633F;
+}
+
+/* Variante propia: Naranja Pedal con texto Azul Noche (7.2:1) */
+.btn-naranja {
+  --bs-btn-bg: #F39A2B;
+  --bs-btn-border-color: #F39A2B;
+  --bs-btn-color: #14213D;
+  --bs-btn-hover-bg: #E08A1E;
+  --bs-btn-hover-border-color: #E08A1E;
+  --bs-btn-hover-color: #14213D;
+  --bs-btn-active-bg: #C97A16;
+  --bs-btn-active-border-color: #C97A16;
+  --bs-btn-active-color: #14213D;
+}
+
+/* Clases propias que complementan a Bootstrap */
+
+/* Portada: una franja naranja abajo, como sello de la marca */
+.portada-marca {
+  border-bottom: 4px solid var(--naranja-pedal);
+  padding-block: 2rem;
+}
+
+/* Títulos de sección con una línea verde debajo */
+.titulo-seccion {
+  color: var(--azul-noche);
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid var(--verde-ruta);
+  display: inline-block;
+}
+
+/* Pie de página con el Azul Noche de la marca */
+.pie-marca {
   background-color: var(--azul-noche);
+  color: var(--blanco);
+}
+
+.pie-marca a {
   color: var(--blanco);
 }
 
@@ -302,11 +351,6 @@ textarea:focus {
   outline: 3px solid var(--verde-ruta);
   outline-offset: 2px;
   border-color: var(--verde-ruta);
-}
-
-/* Botón de envío con relleno generoso */
-form .boton {
-  padding: var(--espacio-s) var(--espacio-l);
 }
 
 /* ---------- 7. Responsive (mobile-first) ---------- */
