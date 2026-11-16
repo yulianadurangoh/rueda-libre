@@ -877,7 +877,7 @@ Cambios:
 - El texto de cada promoción va en carousel-caption con fondo oscuro
   semitransparente (bg-dark bg-opacity-75) para que el blanco se lea
   sobre la foto.
-- - Las fotos tienen la misma proporción con .promo-img { aspect-ratio:
+- Las fotos tienen la misma proporción con .promo-img { aspect-ratio:
   16 / 9; object-fit: cover; }. Primero usé fotos verticales y una altura
   fija (18rem), y se recortaban mucho; las cambié por fotos horizontales
   y por una proporción, así el alto se ajusta al ancho de la pantalla.
@@ -1046,3 +1046,36 @@ Lo que mejoraría:
 - Conectar el formulario a un backend para recibir las reservas.
 - Un modo oscuro con las variables de Bootstrap.
 - Imágenes propias de la flota (hoy varias tarjetas usan la misma foto).
+
+======================================================================
+ENTREGABLE T1 · PROYECTO CON BOOTSTRAP
+======================================================================
+
+Repositorio: https://github.com/yulianadurangoh/rueda-libre
+Sitio publicado: https://yulianadurangoh.github.io/rueda-libre/
+
+Cambios:
+- Agregué README.md en la raíz con la descripción del proyecto, las tecnologías
+  usadas (HTML5, CSS3 y Bootstrap 5.3), la estructura de carpetas, el enlace
+  publicado y la autora.
+- Subí el README con un commit propio: "docs: agregar README con descripción,
+  tecnologías y enlace publicado".
+- Verifiqué que el repositorio sea público y que el sitio publicado abra en una
+  ventana de incógnito.
+
+Autoevaluación según la rúbrica:
+- Uso de Bootstrap: grid, navbar colapsable, cards, carrusel, formulario con
+  validación, modal y alertas, trabajados en las sesiones.
+- Responsive: revisé las tres páginas a 360, 768 y 1280 px, sin desplazamiento
+  lateral.
+- Funcionamiento: las páginas abren y los archivos cargan.
+- Organización del repositorio: estructura clara, README y 31 commits con
+  mensajes descriptivos.
+- Accesibilidad del repositorio: el TL puede abrir el repositorio y el sitio
+  publicado.
+
+Pruebas:
+- Abrí el repositorio y el sitio publicado en una ventana de incógnito.
+- Revisé el README en la página del repositorio.
+- Comprobé el diseño en cada tamaño con el modo dispositivo de DevTools.
+
