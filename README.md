@@ -24,5 +24,11 @@ El sitio se adapta a celular (360 px), tablet (768 px) y escritorio (1280 px), s
 - `img/`: imágenes del sitio
 - `bitacora.txt`: registro del proceso de trabajo, MiniReto por MiniReto
 
+
+## Rueda Nocturna (prototipo)
+
+Prototipo de la campaña con Tailwind CSS (Play CDN):
+https://yulianadurangoh.github.io/rueda-libre/nocturna/prototipo.html
+
 ## Autora
 Yuliana Durango
