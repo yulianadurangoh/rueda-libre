@@ -12,3 +12,17 @@
   --font-titulos: "Montserrat", Arial, sans-serif;
   --font-texto: "Open Sans", Arial, sans-serif;
 }
+
+@layer components {
+  .btn-principal {
+    @apply inline-block rounded-lg bg-verde-ruta px-6 py-3 font-semibold text-white hover:bg-naranja-pedal hover:text-azul-noche;
+  }
+
+  .dato-ruta {
+    @apply rounded-lg bg-crema px-3 py-2 text-center text-sm font-semibold dark:bg-verde-ruta;
+  }
+
+  .caja-paso {
+    @apply rounded-2xl border-2 border-gris-asfalto bg-white p-6 dark:border-naranja-pedal dark:bg-azul-noche;
+  }
+}
