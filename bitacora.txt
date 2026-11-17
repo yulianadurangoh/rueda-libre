@@ -1192,7 +1192,7 @@ Accesibilidad:
 
 
 ======================================================================
-SEMANA 3 · DÍA 2 · RETO 1 · MAQUETACIÓN DE LA LANDING
+SEMANA 3 · DÍA 2 · RETO 5 · MAQUETACIÓN DE LA LANDING
 ======================================================================
 
 Decisiones de layout:
@@ -1207,3 +1207,27 @@ Decisiones de layout:
 - Las anclas (#rutas, #como-funciona, #inscripcion) llevan a cada sección
   gracias al id de cada una.
 - Copié las cards y los botones de componentes.html sin crear variantes nuevas.
+
+======================================================================
+SEMANA 3 · DÍA 2 · RETO 6 · LANDING RESPONSIVE (MOBILE-FIRST)
+======================================================================
+
+Estrategia: las clases sin prefijo aplican a todos los tamaños (celular
+primero). Luego agrego sm: (640 px), md: (768 px) y lg: (1024 px) para las
+pantallas más grandes.
+
+Cambios principales:
+- Encabezado: columna en celular (flex-col) y fila desde md (md:flex-row).
+- Enlaces de sección del encabezado: hidden en celular y md:inline desde md.
+  El botón "Inscríbete" se ve en todos los tamaños.
+- Rutas: 1 columna, 2 desde sm, 3 desde lg.
+- Pasos: 1 columna, 2 desde sm, 4 desde lg.
+- Títulos y texto: text-4xl en celular y md:text-6xl desde md.
+
+Tabla de pruebas:
+| Ancho  | Qué esperaba                         | Lo que vi                                                                  |
+|--------|--------------------------------------|----------------------------------------------------------------------------|
+| 360px  | Una columna, sin scroll lateral      | Todo en una columna, sin scroll lateral. El menú solo muestra el botón Inscríbete. |
+| 768px  | Encabezado en fila, rutas en 2 col.  | El encabezado está en fila y aparecen los enlaces. Las rutas se ven en 2 columnas. |
+| 1024px | Rutas en 3 col., pasos en 4 col.     | Las rutas se ven en 3 columnas y los pasos en 4.                           |
+| 1280px | Igual que 1024, con más espacio      | Igual que 1024, con más espacio a los lados.                               |
