@@ -1231,3 +1231,27 @@ Tabla de pruebas:
 | 768px  | Encabezado en fila, rutas en 2 col.  | El encabezado está en fila y aparecen los enlaces. Las rutas se ven en 2 columnas. |
 | 1024px | Rutas en 3 col., pasos en 4 col.     | Las rutas se ven en 3 columnas y los pasos en 4.                           |
 | 1280px | Igual que 1024, con más espacio      | Igual que 1024, con más espacio a los lados.                               |
+
+SEMANA 3 · DÍA 2 · RETO 7 · MARCA NOCTURNA: TEMA PROPIO Y MODO OSCURO
+
+Qué hice:
+- En src/input.css definí con @theme los seis colores de la marca: Verde Ruta, Naranja Pedal, Azul Noche, Crema, Gris Asfalto y Amarillo Farol (el color nuevo de la campaña).
+- Definí las fuentes Montserrat (títulos) y Open Sans (texto), y las cargué desde Google Fonts en index.html y componentes.html.
+- Reemplacé los colores genéricos de Tailwind por los de la marca en la landing y en el kit de componentes.
+- Agregué la variante dark: a fondos, textos, tarjetas, bordes y botones. El modo oscuro sigue la preferencia del sistema, que es el comportamiento por defecto de Tailwind.
+
+Verificación de contraste (modo oscuro):
+- Crema sobre Azul Noche: 14,83:1 (pasa).
+- Amarillo Farol sobre Azul Noche: 11,08:1 (pasa).
+- Azul Noche sobre Naranja Pedal: 7,20:1 (pasa).
+- Crema sobre Verde Ruta: 4,93:1 (pasa).
+- Verde Ruta sobre Azul Noche: 3,01:1 (no pasa). Por eso el verde ya no se usa como texto en modo oscuro; solo como fondo de botones y cajas, con texto blanco o crema.
+- Gris Asfalto sobre Azul Noche: 2,66:1 (no pasa). No lo uso como texto en modo oscuro.
+
+Cómo probé el modo oscuro:
+- Con DevTools: Ctrl+Shift+P → Show Rendering → prefers-color-scheme: dark.
+- Revisé que en modo claro la página siguiera igual.
+
+Qué aprendí:
+- Con @theme los colores quedan como utilidades (bg-verde-ruta, text-azul-noche) y no hace falta escribir códigos hexadecimales en cada clase.
+- Un color puede ser bonito y aun así no servir para texto: hay que revisar el contraste antes de usarlo.
