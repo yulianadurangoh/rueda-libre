@@ -1256,7 +1256,7 @@ Qué aprendí:
 - Con @theme los colores quedan como utilidades (bg-verde-ruta, text-azul-noche) y no hace falta escribir códigos hexadecimales en cada clase.
 - Un color puede ser bonito y aun así no servir para texto: hay que revisar el contraste antes de usarlo.
 
-SEMANA 3 · DÍA 2 · RETO 4 · CÓDIGO LEGIBLE Y VEREDICTO: BOOTSTRAP VS TAILWIND
+SEMANA 3 · DÍA 2 · RETO 8 · CÓDIGO LEGIBLE Y VEREDICTO: BOOTSTRAP VS TAILWIND
 
 Qué hice:
 - Busqué las clases repetidas en la landing: los botones verdes (2 veces), los datos de ruta (9 veces) y las cajas de pasos (4 veces).
@@ -1278,3 +1278,26 @@ Comparativa:
 
 Recomendación para Rueda Libre:
 Recomiendo Tailwind para la próxima versión de todo el sitio. Con @theme la marca vive en un solo archivo, el modo oscuro se hace con dark: y el CSS final es más liviano. Su desventaja es que el HTML se hace más largo; la reduje con @apply en tres clases, sin pasarme del límite de tres.
+
+======================================================================
+SEMANA 3 · DÍA 3 · RETO 9 · INSCRIPCIÓN · FORMULARIO DE LA LANDING
+======================================================================
+
+Qué hice:
+- Reemplacé la sección #inscripcion (antes un enlace mailto) por un formulario con encabezado.
+- Dos fieldset con legend: "Tus datos y cupo" y "Tu ruta".
+- Controles: text (nombre), tel (celular), number con min 0 y max 3 (acompañantes, porque es una cantidad) y select (ruta).
+- Todos los campos son required. Nombre: minlength 3. Celular: pattern 3[0-9]{9}. Acompañantes: 0 a 3.
+- Estilo: clase .campo en input.css con las mismas utilidades de los campos del kit. Celular y acompañantes van en dos columnas desde md. El modo oscuro sigue la preferencia del sistema.
+- Agregué el anillo de foco a .btn-principal: la prueba de teclado mostró que el botón de envío no lo tenía.
+
+Pruebas (Chrome, Playwright):
+- Vacío: no envía; los 4 campos inválidos; foco en Nombre.
+- Inválidos: nombre corto, celular sin 3 al inicio, celular de 9 dígitos, acompañantes 4 y -1, ruta vacía: en todos los casos no envía.
+- Completo: envía una vez.
+- Teclado: Tab recorre Nombre, Celular, Acompañantes, Ruta y Enviar, con anillo visible en cada uno. Enter envía. Con el formulario vacío, Enter no envía y el foco vuelve a Nombre.
+- Responsive: celular y acompañantes en una fila desde 768 px; sin scroll lateral en 360 px.
+- Modo oscuro: campo con fondo azul noche y texto crema.
+
+Tiempo real medido (reloj de pared de cada prueba):
+- Vacío 682 ms · Inválidos 3670 ms · Completo 573 ms · Teclado 1014 ms · Teclado vacío 643 ms · Responsive 1901 ms · Modo oscuro 1039 ms · Total 9779 ms.
