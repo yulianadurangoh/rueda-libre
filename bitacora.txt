@@ -1255,3 +1255,26 @@ Cómo probé el modo oscuro:
 Qué aprendí:
 - Con @theme los colores quedan como utilidades (bg-verde-ruta, text-azul-noche) y no hace falta escribir códigos hexadecimales en cada clase.
 - Un color puede ser bonito y aun así no servir para texto: hay que revisar el contraste antes de usarlo.
+
+SEMANA 3 · DÍA 2 · RETO 4 · CÓDIGO LEGIBLE Y VEREDICTO: BOOTSTRAP VS TAILWIND
+
+Qué hice:
+- Busqué las clases repetidas en la landing: los botones verdes (2 veces), los datos de ruta (9 veces) y las cajas de pasos (4 veces).
+- Creé tres clases con @apply dentro de @layer components en src/input.css: .btn-principal, .dato-ruta y .caja-paso. Son las únicas clases con @apply.
+- Reemplacé esas listas de clases en index.html con Ctrl+H. Las cards conservan el marcado del kit.
+- Revisé que la página se viera igual en modo claro y en modo oscuro.
+
+Mediciones (tamaño del CSS y JavaScript):
+- Tailwind sin minificar (output.css): 19,8 KB
+- Tailwind minificado (output.min.css): 15,9 KB
+- Bootstrap CSS (bootstrap.min.css): 33,8 KB
+- Bootstrap JavaScript (bootstrap.bundle.min.js): 25,2 KB
+
+Comparativa:
+- Curva de aprendizaje: Bootstrap se arma rápido con componentes listos, pero hay que aprender sus clases y sus nombres. Tailwind exige aprender muchas utilidades, pero una vez que las conoces, se entiende qué hace cada clase.
+- Personalización: Bootstrap se cambia sobrescribiendo variables y clases. Tailwind, con @theme, define los colores y fuentes de la marca en un solo lugar.
+- Tamaño final: con --minify, el CSS de Tailwind queda en 15,9 KB frente a 33,8 KB del CSS de Bootstrap. Bootstrap también añade 25,2 KB de JavaScript, que la landing no necesita.
+- Casos de uso: Bootstrap sirve para prototipos rápidos y sitios con componentes estándar. Tailwind sirve cuando hay una marca propia, modo oscuro y necesidad de un CSS pequeño.
+
+Recomendación para Rueda Libre:
+Recomiendo Tailwind para la próxima versión de todo el sitio. Con @theme la marca vive en un solo archivo, el modo oscuro se hace con dark: y el CSS final es más liviano. Su desventaja es que el HTML se hace más largo; la reduje con @apply en tres clases, sin pasarme del límite de tres.
