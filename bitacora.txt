@@ -1145,3 +1145,47 @@ Revisión:
   focus:ring-4.
 - Probé los botones con el teclado: Tab recorre los tres y el anillo se ve en
   cada uno.
+
+======================================================================
+SEMANA 3 · RETO 3 · CARDS DE RUTAS NOCTURNAS
+======================================================================
+
+- Construí tres cards con la misma estructura: imagen, etiqueta de nivel,
+  nombre, lista de datos, precio y botón.
+- Cada card cambia solo los datos y el color de la etiqueta de nivel:
+  verde para fácil, ámbar para medio y rosa para difícil.
+- La imagen usa h-64, w-full y object-cover. Antes tenía h-48, y la foto se
+  cortaba; con más altura se ven completos los ciclistas.
+- La card reacciona al mouse cambiando el borde y la sombra, sin mover el
+  contenido.
+- No escribí CSS propio: todo el estilo sale de utilidades de Tailwind.
+
+======================================================================
+SEMANA 3 · RETO 4 · KIT DE COMPONENTES RUEDA NOCTURNA v0.1
+======================================================================
+
+Comparación de enfoques:
+- Bootstrap: el botón, la alerta y el campo vienen ya diseñados (btn, alert,
+  form-control). Cambio el color o el tamaño con variables o clases extra.
+- Tailwind: cada componente se arma con utilidades: rounded-lg, px-6 py-3,
+  bg-emerald-700, border-l-4, etc. Tengo control total, pero el HTML tiene
+  más clases.
+
+Verificación de generación de clases:
+- Al guardar componentes.html, la CLI regeneró src/output.css. Las clases
+  que uso (por ejemplo bg-sky-950 y border-amber-400) aparecen en output.css.
+- Una clase que no uso (bg-pink-500) no aparece en output.css, porque la CLI
+  solo genera las clases que escribo en los archivos del proyecto.
+
+Reglas del kit:
+- Radios: rounded-lg en botones, campos y alertas. La card usa rounded-2xl
+  (única excepción, por ser un bloque más grande).
+- Espaciado: px-6 py-3 en botones y campos; p-4 en alertas; p-6 en la card.
+- Colores: paleta emerald para la marca y los botones; sky para información;
+  emerald para éxito; amber para advertencia.
+
+Accesibilidad:
+- Los campos tienen etiqueta con for, que coincide con el id del campo.
+- La alerta de éxito tiene role="status", para que los lectores de pantalla
+  la anuncien como un aviso.
+- Todos los componentes muestran el anillo de foco al usar Tab.

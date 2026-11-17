@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rueda Nocturna · Kit de componentes</title>
+  <!-- CSS generado por la CLI de Tailwind -->
+  <link href="./src/output.css" rel="stylesheet">
+</head>
+<body class="bg-emerald-950 px-6 py-12 text-white">
+  <main class="mx-auto max-w-xl space-y-12">
+    <h1 class="text-4xl font-bold text-emerald-300">Kit de componentes · Rueda Nocturna v0.1</h1>
+
+    <!-- 1. BOTONES -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold">Botones</h2>
+      <div class="flex flex-wrap gap-4">
+        <a href="#" class="inline-block rounded-lg bg-emerald-700 px-6 py-3 font-semibold text-white hover:bg-emerald-600 focus:outline-hidden focus:ring-4 focus:ring-emerald-300">Principal</a>
+        <a href="#" class="inline-block rounded-lg bg-emerald-400 px-6 py-3 font-semibold text-slate-950 hover:bg-emerald-300 focus:outline-hidden focus:ring-4 focus:ring-emerald-200">Secundario</a>
+        <a href="#" class="inline-block rounded-lg border-2 border-emerald-400 px-6 py-3 font-semibold text-emerald-300 hover:bg-emerald-400 hover:text-slate-950 focus:outline-hidden focus:ring-4 focus:ring-emerald-200">Contorno</a>
+      </div>
+    </section>
+
+    <!-- 2. CARD -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold">Card</h2>
+      <article class="flex flex-col overflow-hidden rounded-2xl border border-emerald-800 bg-slate-900 text-left shadow-lg transition hover:border-emerald-400 hover:shadow-2xl">
+        <img src="../img/ruta.jpeg" alt="Ciclistas recorriendo una carretera entre montañas" class="h-64 w-full object-cover object-center">
+        <div class="flex flex-col gap-4 p-6">
+          <span class="w-fit rounded-full bg-emerald-400 px-3 py-1 text-sm font-semibold text-slate-950">Nivel fácil</span>
+          <h3 class="text-2xl font-bold text-white">Luces del Centro</h3>
+          <ul class="grid grid-cols-3 gap-3">
+            <li>
+              <p class="text-sm text-slate-400">Distancia</p>
+              <p class="font-bold text-white">10 km</p>
+            </li>
+            <li>
+              <p class="text-sm text-slate-400">Duración</p>
+              <p class="font-bold text-white">2 h</p>
+            </li>
+            <li>
+              <p class="text-sm text-slate-400">Punto de encuentro</p>
+              <p class="font-bold text-white">Sede Rueda Libre</p>
+            </li>
+          </ul>
+          <p class="text-3xl font-bold text-emerald-300">$55.000</p>
+          <a href="#" class="inline-block w-fit rounded-lg bg-emerald-700 px-6 py-3 font-semibold text-white hover:bg-emerald-600 focus:outline-hidden focus:ring-4 focus:ring-emerald-300">Reservar</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3. ALERTAS -->
+    <section class="space-y-4 text-left">
+      <h2 class="text-2xl font-bold">Alertas</h2>
+
+      <div class="rounded-lg border-l-4 border-sky-400 bg-sky-950 p-4">
+        <p class="font-bold text-sky-300">Información</p>
+        <p class="text-slate-300">Las rutas salen de la sede a las 7:30 p. m.</p>
+      </div>
+
+      <div role="status" class="rounded-lg border-l-4 border-emerald-400 bg-emerald-900 p-4">
+        <p class="font-bold text-emerald-300">Éxito</p>
+        <p class="text-slate-300">Tu reserva fue confirmada.</p>
+      </div>
+
+      <div class="rounded-lg border-l-4 border-amber-400 bg-amber-950 p-4">
+        <p class="font-bold text-amber-300">Advertencia</p>
+        <p class="text-slate-300">Quedan pocos cupos para este recorrido.</p>
+      </div>
+    </section>
+
+    <!-- 4. CAMPOS DE FORMULARIO -->
+    <section class="space-y-6 text-left">
+      <h2 class="text-2xl font-bold">Formulario</h2>
+
+      <div class="space-y-2">
+        <label for="correo" class="block font-semibold text-emerald-300">Correo electrónico</label>
+        <input id="correo" type="email" placeholder="tu@correo.com" class="w-full rounded-lg border border-emerald-400 bg-slate-900 px-6 py-3 text-white placeholder:text-slate-500 focus:outline-hidden focus:ring-4 focus:ring-emerald-200">
+        <p class="text-sm text-slate-400">Te enviaremos los detalles de tu reserva.</p>
+      </div>
+
+      <div class="space-y-2">
+        <label for="celular" class="block font-semibold text-emerald-300">Celular</label>
+        <input id="celular" type="tel" placeholder="3001234567" class="w-full rounded-lg border border-emerald-400 bg-slate-900 px-6 py-3 text-white placeholder:text-slate-500 focus:outline-hidden focus:ring-4 focus:ring-emerald-200">
+        <p class="text-sm text-slate-400">Escribe 10 dígitos que empiecen por 3.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -8,17 +8,24 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-amber-300: oklch(87.9% 0.169 91.605);
     --color-amber-400: oklch(82.8% 0.189 84.429);
+    --color-amber-950: oklch(27.9% 0.077 45.635);
     --color-emerald-200: oklch(90.5% 0.093 164.15);
     --color-emerald-300: oklch(84.5% 0.143 164.978);
     --color-emerald-400: oklch(76.5% 0.177 163.223);
     --color-emerald-600: oklch(59.6% 0.145 163.225);
     --color-emerald-700: oklch(50.8% 0.118 165.612);
     --color-emerald-800: oklch(43.2% 0.095 166.913);
+    --color-emerald-900: oklch(37.8% 0.077 168.94);
     --color-emerald-950: oklch(26.2% 0.051 172.552);
+    --color-sky-300: oklch(82.8% 0.111 230.318);
+    --color-sky-400: oklch(74.6% 0.16 232.661);
+    --color-sky-950: oklch(29.3% 0.066 243.157);
     --color-rose-400: oklch(71.2% 0.194 13.428);
     --color-slate-300: oklch(86.9% 0.022 252.894);
     --color-slate-400: oklch(70.4% 0.04 256.788);
+    --color-slate-500: oklch(55.4% 0.046 257.417);
     --color-slate-900: oklch(20.8% 0.042 265.755);
     --color-slate-950: oklch(12.9% 0.042 264.695);
     --color-white: #fff;
@@ -32,6 +39,8 @@
     --text-2xl--line-height: calc(2 / 1.5);
     --text-3xl: 1.875rem;
     --text-3xl--line-height: calc(2.25 / 1.875);
+    --text-4xl: 2.25rem;
+    --text-4xl--line-height: calc(2.5 / 2.25);
     --text-5xl: 3rem;
     --text-5xl--line-height: 1;
     --font-weight-semibold: 600;
@@ -201,6 +210,9 @@
   .mt-12 {
     margin-top: calc(var(--spacing) * 12);
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
@@ -258,10 +270,25 @@
   .gap-10 {
     gap: calc(var(--spacing) * 10);
   }
+  :where(.space-y-2 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-4 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 4) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 4) * calc(1 - var(--tw-space-y-reverse)));
+  }
   :where(.space-y-6 > :not(:last-child)) {
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 6) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing) * 6) * calc(1 - var(--tw-space-y-reverse)));
+  }
+  :where(.space-y-12 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 12) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 12) * calc(1 - var(--tw-space-y-reverse)));
   }
   .overflow-hidden {
     overflow: hidden;
@@ -283,14 +310,27 @@
     border-style: var(--tw-border-style);
     border-width: 2px;
   }
+  .border-l-4 {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 4px;
+  }
+  .border-amber-400 {
+    border-color: var(--color-amber-400);
+  }
   .border-emerald-400 {
     border-color: var(--color-emerald-400);
   }
   .border-emerald-800 {
     border-color: var(--color-emerald-800);
   }
+  .border-sky-400 {
+    border-color: var(--color-sky-400);
+  }
   .bg-amber-400 {
     background-color: var(--color-amber-400);
+  }
+  .bg-amber-950 {
+    background-color: var(--color-amber-950);
   }
   .bg-emerald-400 {
     background-color: var(--color-emerald-400);
@@ -298,11 +338,17 @@
   .bg-emerald-700 {
     background-color: var(--color-emerald-700);
   }
+  .bg-emerald-900 {
+    background-color: var(--color-emerald-900);
+  }
   .bg-emerald-950 {
     background-color: var(--color-emerald-950);
   }
   .bg-rose-400 {
     background-color: var(--color-rose-400);
+  }
+  .bg-sky-950 {
+    background-color: var(--color-sky-950);
   }
   .bg-slate-900 {
     background-color: var(--color-slate-900);
@@ -312,6 +358,9 @@
   }
   .object-center {
     object-position: center;
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
   }
   .p-6 {
     padding: calc(var(--spacing) * 6);
@@ -348,6 +397,10 @@
     font-size: var(--text-3xl);
     line-height: var(--tw-leading, var(--text-3xl--line-height));
   }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    line-height: var(--tw-leading, var(--text-4xl--line-height));
+  }
   .text-5xl {
     font-size: var(--text-5xl);
     line-height: var(--tw-leading, var(--text-5xl--line-height));
@@ -376,8 +429,14 @@
     --tw-tracking: var(--tracking-wide);
     letter-spacing: var(--tracking-wide);
   }
+  .text-amber-300 {
+    color: var(--color-amber-300);
+  }
   .text-emerald-300 {
     color: var(--color-emerald-300);
+  }
+  .text-sky-300 {
+    color: var(--color-sky-300);
   }
   .text-slate-300 {
     color: var(--color-slate-300);
@@ -409,6 +468,9 @@
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .placeholder\:text-slate-500::placeholder {
+    color: var(--color-slate-500);
   }
   @media (hover: hover) {
     .hover\:border-emerald-400:hover {
