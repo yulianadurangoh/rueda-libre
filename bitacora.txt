@@ -1189,3 +1189,21 @@ Accesibilidad:
 - La alerta de éxito tiene role="status", para que los lectores de pantalla
   la anuncien como un aviso.
 - Todos los componentes muestran el anillo de foco al usar Tab.
+
+
+======================================================================
+SEMANA 3 · DÍA 2 · RETO 1 · MAQUETACIÓN DE LA LANDING
+======================================================================
+
+Decisiones de layout:
+- Usé flex para el encabezado y el pie: son filas o columnas de una sola
+  dimensión. El encabezado acomoda el nombre a un lado y los enlaces al otro;
+  el pie acomoda tres bloques en fila.
+- Usé grid para las rutas y los pasos: son elementos en dos dimensiones
+  (filas y columnas) con columnas iguales. Las rutas usan lg:grid-cols-3 y los
+  pasos usan lg:grid-cols-4.
+- Todas las secciones están dentro de un solo contenedor con mx-auto,
+  max-w-5xl y px-6, para que tengan el mismo ancho y relleno lateral.
+- Las anclas (#rutas, #como-funciona, #inscripcion) llevan a cada sección
+  gracias al id de cada una.
+- Copié las cards y los botones de componentes.html sin crear variantes nuevas.
