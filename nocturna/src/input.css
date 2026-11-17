@@ -14,8 +14,14 @@
 }
 
 @layer components {
-  .btn-principal {
-    @apply inline-block rounded-lg bg-verde-ruta px-6 py-3 font-semibold text-white hover:bg-naranja-pedal hover:text-azul-noche;
+  
+
+    .btn-principal {
+    @apply inline-block rounded-lg bg-verde-ruta px-6 py-3 font-semibold text-white hover:bg-naranja-pedal hover:text-azul-noche focus:outline-hidden focus:ring-4 focus:ring-amarillo-farol;
+  }
+
+  .campo {
+    @apply w-full rounded-lg border border-gris-asfalto bg-white px-6 py-3 text-azul-noche focus:outline-hidden focus:ring-4 focus:ring-amarillo-farol dark:border-naranja-pedal dark:bg-azul-noche dark:text-crema;
   }
 
   .dato-ruta {

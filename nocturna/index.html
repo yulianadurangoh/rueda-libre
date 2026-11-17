@@ -113,17 +113,49 @@
         </div>
       </section>
 
-      <!-- Inscripción -->
+            <!-- Inscripción -->
       <section id="inscripcion" class="py-12">
-        <div class="flex flex-col items-center justify-between gap-6 rounded-2xl border-2 border-verde-ruta bg-white p-6 md:flex-row md:p-8 dark:border-amarillo-farol dark:bg-verde-ruta dark:text-crema">
-          <div>
-            <h2 class="font-titulos text-2xl font-bold">Reserva tu cupo</h2>
-            <p class="mt-2">Los cupos son limitados en cada salida.</p>
-          </div>
-          <a href="mailto:contacto@ruedalibre.com" class="rounded-lg bg-naranja-pedal px-6 py-3 font-semibold text-azul-noche hover:bg-amarillo-farol">Inscríbete ahora</a>
-        </div>
+        <h2 class="mb-2 font-titulos text-3xl font-bold text-azul-noche dark:text-amarillo-farol">Inscríbete a una salida</h2>
+        <p class="mb-8">Los cupos son limitados en cada salida. Todos los campos son obligatorios.</p>
+
+        <form action="#" method="post" class="space-y-6">
+
+          <fieldset class="space-y-4 rounded-2xl border-2 border-gris-asfalto bg-white p-6 dark:border-naranja-pedal dark:bg-azul-noche">
+            <legend class="px-2 font-titulos text-xl font-bold text-azul-noche dark:text-crema">Tus datos y cupo</legend>
+            <div class="space-y-4">
+              <div>
+                <label for="nombre" class="mb-1 block font-semibold">Nombre completo (mínimo 3 caracteres)</label>
+                <input id="nombre" name="nombre" type="text" required minlength="3" autocomplete="name" class="campo">
+              </div>
+              <div class="grid gap-4 md:grid-cols-2">
+                <div>
+                  <label for="celular" class="mb-1 block font-semibold">Celular (10 dígitos, empieza por 3)</label>
+                  <input id="celular" name="celular" type="tel" inputmode="numeric" required pattern="3[0-9]{9}" autocomplete="tel" title="Escribe 10 dígitos que empiecen por 3, sin espacios. Ejemplo: 3001234567" class="campo">
+                </div>
+                <div>
+                  <label for="acompanantes" class="mb-1 block font-semibold">Acompañantes (de 0 a 3)</label>
+                  <input id="acompanantes" name="acompanantes" type="number" inputmode="numeric" required min="0" max="3" step="1" class="campo">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="space-y-4 rounded-2xl border-2 border-gris-asfalto bg-white p-6 dark:border-naranja-pedal dark:bg-azul-noche">
+            <legend class="px-2 font-titulos text-xl font-bold text-azul-noche dark:text-crema">Tu ruta</legend>
+            <div>
+              <label for="ruta" class="mb-1 block font-semibold">Ruta nocturna</label>
+              <select id="ruta" name="ruta" required class="campo">
+                <option value="">Elige una ruta</option>
+                <option value="luces-del-centro">Luces del Centro (fácil)</option>
+                <option value="miradores-de-la-ciudad">Miradores de la Ciudad (medio)</option>
+                <option value="luna-en-las-palmas">Luna en Las Palmas (difícil)</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn-principal">Enviar inscripción</button>
+        </form>
       </section>
-    </main>
 
     <!-- Pie -->
     <footer class="flex flex-col gap-6 border-t border-gris-asfalto py-8 md:flex-row md:justify-between dark:border-naranja-pedal">
