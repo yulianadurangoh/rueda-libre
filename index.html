@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,12 @@
   <title>Rueda Libre | Alquiler de bicicletas en Medellín</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet">
   <!-- 1. Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <!-- 2. Mis estilos, siempre DESPUÉS de Bootstrap -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -20,15 +23,22 @@
   <header>
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt="Rueda Libre, ir al inicio" width="200"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
+        <a class="navbar-brand" href="index.html"><img src="img/logo.svg" alt="Rueda Libre, ir al inicio"
+            width="200"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal"
+          aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú de navegación">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="menuPrincipal">
           <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html"><i class="bi bi-house" aria-hidden="true"></i> Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="paginas/tarifas.html"><i class="bi bi-tags" aria-hidden="true"></i> Tarifas y rutas</a></li>
-            <li class="nav-item"><a class="nav-link" href="paginas/reservas.html"><i class="bi bi-calendar-check" aria-hidden="true"></i> Reservas</a></li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html"><i class="bi bi-house"
+                  aria-hidden="true"></i> Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="paginas/tarifas.html"><i class="bi bi-tags"
+                  aria-hidden="true"></i> Tarifas y rutas</a></li>
+            <li class="nav-item"><a class="nav-link" href="paginas/reservas.html"><i class="bi bi-calendar-check"
+                  aria-hidden="true"></i> Reservas</a></li>
+            <li class="nav-item"><a class="nav-link" href="nocturna/index.html"><i class="bi bi-moon-stars"
+                  aria-hidden="true"></i> Rueda Nocturna</a></li>
           </ul>
         </div>
       </div>
@@ -36,37 +46,52 @@
   </header>
 
   <main class="container">
-     <section class="row align-items-center g-4 py-4 portada-marca">
+    <section class="row align-items-center g-4 py-4 portada-marca">
       <div class="col-12 col-md-6">
         <h1>Rueda Libre</h1>
-        <p>¡Bienvenidos a Rueda Libre! Alquila tu bicicleta y descubre Medellín sobre dos ruedas. <a href="#encuentranos">Mira cómo llegar a nuestro punto de alquiler</a>.</p>
+        <p>¡Bienvenidos a Rueda Libre! Alquila tu bicicleta y descubre Medellín sobre dos ruedas. <a
+            href="#encuentranos">Mira cómo llegar a nuestro punto de alquiler</a>.</p>
         <p><a href="paginas/tarifas.html" class="btn btn-outline-primary">Consulta nuestras tarifas</a></p>
       </div>
       <div class="col-12 col-md-6">
-        <img src="img/portada.jpeg" alt="Grupo de ciclistas con cascos verdes celebrando frente al letrero de Medellín" class="img-fluid rounded">
+        <img src="img/portada.jpeg" alt="Grupo de ciclistas con cascos verdes celebrando frente al letrero de Medellín"
+          class="img-fluid rounded">
       </div>
     </section>
 
-       <section>
+    <section>
       <h2 class="titulo-seccion">Promociones del mes</h2>
       <div id="carruselPromos" class="carousel slide col-lg-8 mx-auto" data-bs-ride="carousel">
         <div class="carousel-inner rounded">
           <div class="carousel-item active">
-             <img src="img/promo-urbanas.jpeg" class="d-block w-100 promo-img" alt="Bicicleta urbana negra apoyada en la baranda de un puente sobre un canal: los martes, 2x1 en bicicletas urbanas">
+            <img src="img/promo-urbanas.jpeg" class="d-block w-100 promo-img"
+              alt="Bicicleta urbana negra apoyada en la baranda de un puente sobre un canal: los martes, 2x1 en bicicletas urbanas">
             <div class="carousel-caption bg-dark bg-opacity-75 rounded">
               <p class="fs-4 fw-bold mb-0">Martes 2x1 en bicicletas urbanas</p>
             </div>
           </div>
           <div class="carousel-item">
-                   <img src="img/promo-electricas.jpeg" class="d-block w-100 promo-img" alt="Bicicleta eléctrica negra de llantas anchas frente a unas escaleras de piedra: 20 % de descuento de lunes a jueves">
+            <img src="img/promo-electricas.jpeg" class="d-block w-100 promo-img"
+              alt="Bicicleta eléctrica negra de llantas anchas frente a unas escaleras de piedra: 20 % de descuento de lunes a jueves">
             <div class="carousel-caption bg-dark bg-opacity-75 rounded">
               <p class="fs-4 fw-bold mb-0">20 % de descuento en eléctricas de lunes a jueves</p>
             </div>
           </div>
           <div class="carousel-item">
-              <img src="img/promo-cumpleanos.jpeg" class="d-block w-100 promo-img" alt="Cuatro amigos paseando en bicicletas verdes junto a un río en la ciudad: si cumples años, el recorrido guiado es gratis">
+            <img src="img/promo-cumpleanos.jpeg" class="d-block w-100 promo-img"
+              alt="Cuatro amigos paseando en bicicletas verdes junto a un río en la ciudad: si cumples años, el recorrido guiado es gratis">
             <div class="carousel-caption bg-dark bg-opacity-75 rounded">
               <p class="fs-4 fw-bold mb-0">Si cumples años, el recorrido guiado es gratis</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <a href="nocturna/index.html">
+              <img src="img/ruta.jpeg" class="d-block w-100 promo-img"
+                alt="Ciclistas en una ruta nocturna: conoce Rueda Nocturna">
+            </a>
+            <div class="carousel-caption bg-dark bg-opacity-75 rounded">
+              <p class="fs-4 fw-bold mb-0"><a href="nocturna/index.html" class="text-white">Conoce Rueda Nocturna</a>
+              </p>
             </div>
           </div>
         </div>
@@ -106,14 +131,16 @@
         <h3>Recorridos guiados</h3>
         <img src="img/ruta.jpeg" alt="Grupo de ciclistas recorriendo una carretera entre montañas verdes" width="400">
         <p>Recorre los lugares más representativos de la ciudad con un guía. Los recorridos salen <strong>sábados y
-            domingos a las 7:00&nbsp;a.&nbsp;m.</strong> <a href="paginas/tarifas.html#recorridos" class="btn btn-naranja btn-sm">Ver recorridos y precios</a>
+            domingos a las 7:00&nbsp;a.&nbsp;m.</strong> <a href="paginas/tarifas.html#recorridos"
+            class="btn btn-naranja btn-sm">Ver recorridos y precios</a>
         </p>
       </article>
 
       <article>
         <h3>Taller básico</h3>
         <p>Aprende a <em>cuidar tu propia bicicleta</em>: inflar llantas, ajustar frenos y lubricar la cadena.
-          <strong>Cupos limitados</strong>.</p>
+          <strong>Cupos limitados</strong>.
+        </p>
       </article>
 
       <article>
@@ -126,7 +153,7 @@
 
     <section>
       <h2 class="titulo-seccion">Nuestra flota</h2>
-        <div class="row g-4">
+      <div class="row g-4">
         <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
           <article class="card h-100">
             <img src="img/bicicleta.jpeg" class="card-img-top" alt="Bicicleta urbana">
@@ -206,10 +233,10 @@
         </div>
       </div>
     </section>
-    
-      <section>
+
+    <section>
       <h2 class="titulo-seccion">Nuestras rutas</h2>
-        <div class="row g-4">
+      <div class="row g-4">
         <div class="col-12 col-md-4">
           <article class="card h-100">
             <img src="img/ruta.jpeg" class="card-img-top" alt="Ciclistas recorriendo un parque junto al río">
@@ -239,8 +266,8 @@
         </div>
       </div>
     </section>
-    
-     <section>
+
+    <section>
       <h2 class="text-center mb-4">¿Por qué Rueda Libre?</h2>
       <div class="row g-4">
         <div class="col-12 col-md-6 col-lg-3">
@@ -277,7 +304,7 @@
         </div>
       </div>
     </section>
-  
+
     <section>
       <h2 class="titulo-seccion">¿Cómo alquilar?</h2>
       <ol>
@@ -306,7 +333,8 @@
     </div>
     <div>
       <p><strong>Contacto</strong></p>
-      <p><i class="bi bi-envelope" aria-hidden="true"></i> <a href="mailto:contacto@ruedalibre.com">contacto@ruedalibre.com</a></p>
+      <p><i class="bi bi-envelope" aria-hidden="true"></i> <a
+          href="mailto:contacto@ruedalibre.com">contacto@ruedalibre.com</a></p>
     </div>
     <div>
       <p><strong>Horario</strong></p>
@@ -314,8 +342,11 @@
     </div>
   </footer>
 
-    <a href="https://wa.me/573000000000" target="_blank" class="whatsapp"><i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp</a>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <a href="https://wa.me/573000000000" target="_blank" class="whatsapp"><i class="bi bi-whatsapp"
+      aria-hidden="true"></i> WhatsApp</a>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
