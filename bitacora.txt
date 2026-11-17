@@ -1079,3 +1079,47 @@ Pruebas:
 - Revisé el README en la página del repositorio.
 - Comprobé el diseño en cada tamaño con el modo dispositivo de DevTools.
 
+
+======================================================================
+SEMANA 3 · RUEDA NOCTURNA · PROTOTIPO CON TAILWIND
+======================================================================
+
+Objetivo: prototipar la sección principal de la campaña "Rueda Nocturna"
+con el Play CDN de Tailwind, usando solo clases de utilidad.
+
+Botón con Bootstrap (semana 2):
+  <button class="btn btn-primary">Reservar</button>
+Bootstrap me entrega el componente ya diseñado. Solo escribí la clase
+btn-primary y el color de la marca lo cambié con variables (--bs-primary).
+Es rápido, pero el botón se parece al de cualquier sitio con Bootstrap si
+no lo personalizo.
+
+Botón con Tailwind (hoy):
+  <a href="#" class="inline-block rounded-lg bg-emerald-700 px-6 py-3
+  font-semibold text-white hover:bg-emerald-600">Inscríbete</a>
+Tailwind no tiene una clase "botón". Armé el botón combinando utilidades:
+rounded-lg (esquinas), bg-emerald-700 (fondo), px-6 py-3 (espacio),
+font-semibold (grosor), text-white (color del texto) y hover:bg-emerald-600
+(cambio de color al pasar el mouse).
+
+Diferencia clave:
+- Bootstrap es un framework de componentes: me entrega piezas terminadas
+  (btn, card, navbar) que luego personalizo.
+- Tailwind es utility-first: no trae componentes, sino clases pequeñas de un
+  solo propósito que combino en el HTML para construir cualquier diseño.
+Con Bootstrap escribo menos clases, pero el diseño depende del componente.
+Con Tailwind escribo más clases, pero cada una controla algo concreto.
+
+Decisiones:
+- Usé el Play CDN porque es un prototipo. En el MiniReto 2 lo pasaré a la CLI.
+- El texto del botón es blanco, porque con el verde oscuro (emerald-700) el
+  texto azul noche no se leía bien.
+- El color del fondo y de los títulos es verde (emerald), que se parece al
+  verde de la marca Rueda Libre.
+
+Revisión:
+- prototipo.html carga el Play CDN y no tiene <style> ni style="".
+- La sección tiene un solo h1 y usa las cuatro familias de utilidades:
+  espaciado (px-6, py-12, space-y-6, gap-10), tamaños (max-w-xl, text-5xl),
+  colores (bg-emerald-950, text-emerald-300) y tipografía (font-bold,
+  leading-relaxed, tracking-wide, uppercase).
