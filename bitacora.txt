@@ -1123,3 +1123,25 @@ Revisión:
   espaciado (px-6, py-12, space-y-6, gap-10), tamaños (max-w-xl, text-5xl),
   colores (bg-emerald-950, text-emerald-300) y tipografía (font-bold,
   leading-relaxed, tracking-wide, uppercase).
+
+======================================================================
+    SEMANA 3 · RETO 2 · TAILWIND CLI Y BOTONES
+======================================================================
+
+- Configuré Tailwind con la CLI: instalé tailwindcss y @tailwindcss/cli con
+  npm, creé src/input.css con @import "tailwindcss" y excluí node_modules/
+  con .gitignore.
+- Generé src/output.css con el comando:
+  npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+- nocturna/index.html enlaza ./src/output.css en lugar del Play CDN.
+- Clase que sí uso: bg-emerald-700 aparece en output.css porque la uso en el
+  botón principal.
+- Clase que no uso: bg-pink-500 no aparece en output.css. Tailwind solo genera
+  las clases que encuentra escritas en los archivos del proyecto. Como nunca
+  escribí bg-pink-500 en un HTML, no la incluyó.
+- Construí tres variantes de botón (principal, secundario y de contorno). Cada
+  una cambia con hover, y con focus muestra un anillo de color. Quité el
+  contorno del navegador con focus:outline-hidden y lo reemplacé por
+  focus:ring-4.
+- Probé los botones con el teclado: Tab recorre los tres y el anillo se ve en
+  cada uno.
