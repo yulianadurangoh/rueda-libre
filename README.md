@@ -1,34 +1,26 @@
-# Rueda Libre
+# Rueda Libre · Sitio web
 
-Sitio web de alquiler de bicicletas y recorridos guiados en Medellín.
+Sitio multipágina y responsive para una tienda de bicicletas y rutas en Medellín, con la landing de campaña Rueda Nocturna.
 
 **Sitio publicado:** https://yulianadurangoh.github.io/rueda-libre/
 
-## Descripción
-Rueda Libre es un sitio con tres páginas: inicio, tarifas y recorridos, y reservas. Muestra la flota de bicicletas, las rutas guiadas, las promociones del mes y un formulario de reserva con validación.
+## Páginas
+- `index.html`: inicio con la propuesta de valor.
+- `paginas/tarifas.html`: tarifas de servicios.
+- `paginas/reservas.html`: formulario de reservas.
+- `nocturna/index.html`: landing de Rueda Nocturna con modo oscuro.
+- `nocturna/componentes.html`: kit de componentes.
 
 ## Tecnologías
-- HTML5 (estructura semántica)
-- CSS3 con hoja de estilos propia en `css/styles.css` (variables de color y tipografía de la marca)
-- Bootstrap 5.3: grid, navbar colapsable, cards, carrusel, formulario con validación, modal, alertas e íconos
+- HTML5 semántico
+- Bootstrap 5.3 (sitio principal)
+- Tailwind CSS 4 con CLI (landing Rueda Nocturna)
 
-## Diseño responsive
-El sitio se adapta a celular (360 px), tablet (768 px) y escritorio (1280 px), sin desplazamiento lateral.
+## Framework elegido y justificación
+Bootstrap se usa en el sitio principal porque ya tiene sus componentes armados y el sitio se construyó con él desde el inicio. Tailwind se usa en la landing de Rueda Nocturna porque permite definir los colores y fuentes de la marca con `@theme` y hacer el modo oscuro con `dark:`, con un CSS final más liviano.
 
-## Estructura del proyecto
-- `index.html`: página de inicio
-- `paginas/tarifas.html`: tarifas y recorridos guiados
-- `paginas/reservas.html`: formulario de reserva
-- `pruebas/catalogo-bootstrap.html`: práctica de componentes de Bootstrap
-- `css/styles.css`: identidad visual de la marca
-- `img/`: imágenes del sitio
-- `bitacora.txt`: registro del proceso de trabajo, MiniReto por MiniReto
+## Capturas
+![Vista en escritorio](img/capturas/captura-escritorio.png)
 
-
-## Rueda Nocturna (prototipo)
-
-Prototipo de la campaña con Tailwind CSS (Play CDN):
-https://yulianadurangoh.github.io/rueda-libre/nocturna/prototipo.html
-
-## Autora
-Yuliana Durango
+## Autor
+Yuliana Durango · [GitHub](https://github.com/yulianadurangoh)
